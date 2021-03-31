@@ -1,1 +1,27 @@
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
 /* You can add global styles to this file, and also import other style files */
+@import "../src/assets/sass/styles.scss";
+
+// html, body { height: 100%; }
+// body { margin: 0; font-family: 'Courier New', Courier, monospace}
+
+.mat-typography {
+  line-height: 1.5;
+    color: #707070;
+}
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 8px 0;
+  }
+
+  p {
+    margin: 0;
+  }
+  
+

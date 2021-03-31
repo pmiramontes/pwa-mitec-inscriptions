@@ -1,0 +1,101 @@
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side" position="end">
+    <p>Auto-resizing sidenav</p>
+  </mat-drawer>
+  <div
+    class="example-sidenav-content"
+    style="
+      text-align-last: right;
+      position: absolute;
+      z-index: 1;
+      right: 0;
+      top: 10px;
+    "
+  >
+    <button
+      class="closeside-button"
+      type="button"
+      mat-button
+      (click)="drawer.toggle()"
+      (click)="expandSidebar()"
+      
+    >
+      <mat-icon class="material-icons-round" aria-label="alarm icon">
+        {{ arrowChange }}</mat-icon
+      >
+    </button>
+  </div>
+
+  <div class="content row">
+    <div class="card-container">
+      <div class="stepper col-md-12 mb-3">
+        <img width="auto" src="../../../assets/images/stepper-4.png" />
+      </div>
+      <div>
+        <div class="row no-gutters text-start">
+          <div class="col-12">
+            <p class="paragraph mb-0">
+              Estas explorando
+              <strong> ESTUDIOS CREATIVOS</strong> para enfocarte en
+              <strong> ARTE DIGITAL</strong>
+            </p>
+            <a
+              href="#"
+              style="
+                text-decoration: underline;
+                font-weight: 600;
+                font-size: 12px;
+              "
+              ><p>Consulta tu avance en tu Plan de Estudios</p></a
+            >
+          </div>
+          <div class="col-12">
+            <div class="title-text mt-3">
+              <span class="title"
+                >Selecciona cada Unidad de Formación para ver su horario y
+                selecciona una clase para inscribirla</span
+              >
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="title-text mt-3">
+              <input
+                class="form-control form-control-placeholdericon"
+                type="search"
+                id="search"
+                name="search"
+                placeholder="&#xF002;  Buscar"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</mat-drawer-container>
+
+<div class="toolbar-footer">
+  <div class="container-fluid">
+    <div class="row no-gutters">
+      <div class="content-responsive col-12">
+        <div class="credits-avalible col-12 col-md-3">
+          <span>Carga mínima: </span><span>3 créditos</span><br />
+          <span>Carga máima: </span><span>18 créditos</span>
+        </div>
+        <div class="credits-text col-12 col-md-6">
+          <h3 class="mb-0">
+            Tienes 18
+            <button class="credits-disponible"></button>
+            créditos disponibles
+          </h3>
+        </div>
+        <div class="content-btn col-12 col-md-3 col-xl-2">
+          <dynamic-button
+            type="button "
+            title="Guardar cambios"
+          ></dynamic-button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

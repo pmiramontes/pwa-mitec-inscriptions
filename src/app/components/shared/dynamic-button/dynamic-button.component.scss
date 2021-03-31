@@ -1,0 +1,52 @@
+@import "/src/assets/sass/utilities/variables.scss";
+
+.button {
+  background-color: $blue;
+  border: 1px solid $blue;
+  border-radius: 8px;
+  color: $white;
+  padding: 0.6em;
+  display: inline-block;
+  font-weight: 500;
+  font-size: 12px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button.green, .button1.green {
+  border: solid 1px $green;
+  background-color: $green;
+  color: $white;
+}
+
+.button.transparent {
+  border: solid 1px $blue;
+  background-color: transparent;
+  color: $blue;
+}
+
+.button.link {
+  border: none;
+  background-color: transparent;
+  color: $blue;
+  padding: 0 2em;
+}
+
+.iconButton{
+  vertical-align: bottom;
+  mat-icon{
+    vertical-align: middle;
+    font-size: 20px;
+    height: auto;
+    line-height: normal;
+    margin-right: 0.3em;
+  }
+}
+
+/* Responsive Styles */
+
+@media screen and (max-width: 575px) {
+  .button {
+    width: 100% !important;
+  }
+}

@@ -1,0 +1,41 @@
+::ng-deep .modal-open {
+  overflow: overlay;
+}
+
+.title-modal,
+.form-check-input,
+.subtitle-modal,
+.form-check-label {
+  font-size: 12px;
+}
+
+.subtitle-modal {
+  font-weight: 600;
+}
+
+.form-check-label {
+  vertical-align: text-top;
+}
+
+.button-return {
+  color: #3797f7;
+  font-size: 12px;
+  font-weight: 600;
+  background-color: transparent;
+  border: none;
+  margin: 0 2em;
+}
+
+.button-cancel {
+  background-color: gray;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  padding: 5px 25px;
+  display: inline-block;
+  font-weight: 500;
+  font-size: 13px;
+  cursor: pointer;
+  width: auto;
+  max-width: 100%;
+}

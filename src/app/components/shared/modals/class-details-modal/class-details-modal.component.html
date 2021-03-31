@@ -1,0 +1,159 @@
+<div class="modal-header">
+  <span class="modal-title" id="modal-basic-title">
+    Grupo 1 (EH100 - Inmersión y experimentación creativa)
+  </span>
+  <button
+    type="button"
+    class="close"
+    aria-label="Close"
+    (click)="bsModalRef.hide()"
+  >
+    <span aria-hidden="true">×</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="row">
+    <div class="container">
+      <div class="col-12 mt-2 mb-2">
+        <div class="media">
+          <div class="media-left">
+            <a href="#">
+              <img
+                alt="avatar"
+                class="img-rounded"
+                src="../../../../../assets/images/img_avatar.png"
+                data-holder-rendered="true"
+              />
+            </a>
+          </div>
+          <div class="media-body pl-2">
+            <p class="title-category mb-0">Profesor titular:</p>
+            <span class="paragraph-list">Nayra Mendoza Enriquez</span>
+          </div>
+          <div class="button-container">
+            <button
+              type="button"
+              class="expand-button"
+              (click)="isCollapsed = !isCollapsed"
+              (click)="enableDisableRule()"
+              [attr.aria-expanded]="!isCollapsed"
+              aria-controls="collapseBasic"
+            >
+              {{ name }}
+              <mat-icon
+                style="vertical-align: bottom"
+                class="material-icons-round"
+                aria-label="expand"
+                >{{ icon }}</mat-icon
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+      <div id="collapseBasic" [collapse]="isCollapsed" [isAnimated]="true">
+        <div class="col-md-12">
+          <div class="row mt-3">
+            <div class="border-acordion col-6">
+              <span class="title-category"> Estudios: </span>
+              <ul class="list-class">
+                <li class="paragraph-list-study">
+                  Maestría en Diseño Gráfico | UDEM, 2011
+                </li>
+                <li class="paragraph-list-study">
+                  Maestría en Diseño Gráfico | UDEM, 2011
+                </li>
+                <li class="paragraph-list-study">
+                  Maestría en Diseño Gráfico | UDEM, 2011
+                </li>
+              </ul>
+            </div>
+            <div class="col-6">
+              <span class="title-category"> Detalles logros: </span>
+              <ul class="list-class">
+                <li class="paragraph-list">
+                  Miembro del Senado Académico del Tecnológico de Monterrey
+                </li>
+                <li class="paragraph-list">
+                  Certificado en Pensamiento Lateral y Seis Sombreros para
+                  Pensar deBono Thinking System
+                </li>
+              </ul>
+            </div>
+            <div class="col-12 text-right mb-2" style="font-size: 12px">
+              <a href="">Ver perfil completo (Página externa)</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="stepper col-12"></div>
+      <div class="col-md-12" *ngFor="let modal of ModalMatter">
+        <div class="card-content row">
+          <div class="card-list col-6">
+            <span class="title-category"> {{ modal.titleOne }}</span>
+            <ul class="list-class">
+              <li>
+                {{ modal.concept }}
+              </li>
+            </ul>
+          </div>
+          <div class="col-6">
+            <span class="title-category"> {{ modal.titleTwo }} </span>
+            <ul class="list-class">
+              <li>
+                {{ modal.conceptTwo }}
+              </li>
+            </ul>
+          </div>
+          <div class="stepper col-12"></div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="card-content row">
+          <div class="schedule-list col-6">
+            <ul class="list-class">
+              <span class="title-category">Días de la semana:</span>
+              <li>
+                Lunes, Martes, Jueves
+                <span class="text-parentheses">(sin empalme)</span>
+              </li>
+            </ul>
+          </div>
+          <div class="col-6">
+            <ul class="list-class">
+              <span class="title-category">Horario:</span>
+              <li class="mb-3">
+                7:00 am - 10:00 am
+                <span class="text-parentheses">(sin empalme)</span>
+              </li>
+              <span class="title-category">Variación horario (Semana 4)</span>
+              <li class="mb-3">
+                8:00 am - 11:00 am
+                <span class="text-parentheses">(sin empalme)</span>
+              </li>
+              <span class="title-category">Variación horario (Semana 4)</span>
+              <li>
+                8:00 am - 11:00 am
+                <span class="text-parentheses">(sin empalme)</span>
+              </li>
+            </ul>
+          </div>
+          <div class="stepper col-12"></div>
+        </div>
+      </div>
+      <div class="col-12 mt-2 mb-2">
+        <p class="title-category mt-2 mb-0">Notas adicionales:</p>
+        <span class="paragraph-list"
+          >Esta materia tiene costo adicional por materiales a incluir en el
+          reto</span
+        >
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer row">
+    <div class="col-12 button-content">
+      <div class="col-12 col-md-3 p-0">
+        <dynamic-button type="button " title="Agregar horario"></dynamic-button>
+      </div>
+    </div>
+  </div>
+</div>

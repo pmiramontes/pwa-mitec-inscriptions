@@ -1,0 +1,237 @@
+<div class="content row">
+  <div class="card-container">
+    <div class="stepper col-md-12 mb-4">
+      <img width="auto" src="../../../assets/images/stepper-4.png" />
+    </div>
+    <div class="container-fluid">
+      <div class="row no-gutters">
+        <div class="col-12 mb-4">
+          <div class="card-life">
+            <span class="title">Aviso materias LiFE inscritas</span>
+            <p class="info-hour mt-2">
+              A continuación se te presentan los apoyos efectivos que tienen
+              asignados, para cualquier aclaración comunicate con tesorería de
+              tu campus.
+            </p>
+            <p class="info-mount">
+              Descuento Cobertura del 100% - Monto máximo:
+              <strong>$7,000.00</strong>
+            </p>
+          </div>
+        </div>
+        <div class="title-text col-12 mb-1">
+          <span class="title">Resumen de colegiatura y Apoyos educativos</span>
+        </div>
+        <div class="col-12">
+          <div class="stepper col-12"></div>
+        </div>
+
+        <!-- tabla resumen -->
+        <div class="title-text col-12">
+          <div class="title-table row">
+            <div class="col-6 col-md-3 text-left">Descripcion</div>
+            <div class="col-3 col-md-2 text-center">Cargo</div>
+            <div class="col-3 col-md-2 text-center">Abono</div>
+          </div>
+          <div class="card">
+            <div class="body-table row">
+              <div class="col-6 col-md-3">
+                <p>Colegiatura Profesional</p>
+              </div>
+              <div class="col-3 col-md-2">
+                <p class="card-numbers">$10000</p>
+              </div>
+              <div class="stepper col-12"></div>
+            </div>
+            <div class="body-table-pay row">
+              <div class="col-9 col-md-5">
+                <p>Descuento por beca</p>
+              </div>
+              <div class="col-3 col-md-2">
+                <p class="card-numbers">$10000</p>
+              </div>
+              <div class="stepper col-12"></div>
+            </div>
+            <div class="body-table row">
+              <div class="col-6 col-md-3">
+                <p>Seguro gastos médicos mayores</p>
+              </div>
+              <div class="col-3 col-md-2">
+                <p class="card-numbers">$10000</p>
+              </div>
+              <div class="col-2"></div>
+              <div class="plus-link col-12 col-md-3 mb-2">
+                <a href="#">
+                  <mat-icon class="material-icons-round" aria-label="alarm icon"
+                    >add</mat-icon
+                  >
+                  <span>Cambiar a cobertura máxima</span>
+                </a>
+              </div>
+              <div class="cancel-link col-12 col-md-2 mb-2">
+                <a>
+                  <mat-icon class="material-icons-round" aria-label="alarm icon"
+                    >delete</mat-icon
+                  >
+                  <span (click)="openCancel()">Cancelar seguro</span>
+                </a>
+              </div>
+              <div class="stepper col-12"></div>
+            </div>
+            <div class="body-table-pay row">
+              <div class="col-6 col-md-3">
+                <p>Seguro por colegiatura</p>
+              </div>
+              <div class="col-3 col-md-2">
+                <p class="card-numbers">$10000</p>
+              </div>
+            </div>
+          </div>
+          <div class="card mt-2">
+            <div class="body-table row">
+              <div class="col-6 col-md-3">
+                <p><strong>Total</strong></p>
+              </div>
+              <div class="col-3 col-md-2">
+                <p class="card-numbers">$10000</p>
+              </div>
+              <div class="col-3 col-md-2">
+                <p class="card-numbers">$7000</p>
+              </div>
+              <div class="stepper col-12"></div>
+            </div>
+            <div class="body-table-pay row">
+              <div class="col-6 col-md-3">
+                <p><strong>Monto a pagar</strong></p>
+              </div>
+              <div class="col-3 col-md-2">
+                <p class="card-numbers"><strong>$10000</strong></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="title-text col-12 mt-3 mb-2">
+          <span class="title">Plan de pago</span>
+        </div>
+      </div>
+      <div>
+        <div class="content-pay">
+          <div class="pay-one col-md-6 col-12">
+            <div class="card mt-2 mb-2">
+              <div class="body-table row">
+                <div class="title-radio col-12 mb-2">
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions2"
+                      id="inlineRadio4"
+                      value="option4"
+                    />
+                    <label class="form-check-label" for="inlineRadio4"
+                      >Plan 5 parcialidades</label
+                    >
+                  </div>
+                </div>
+                <div class="stepper col-12"></div>
+              </div>
+              <div class="title-table row">
+                <div class="col-3 col-md-5 text-left">Descripcion</div>
+                <div class="col-6 col-md-4">Fecha de vencimiento</div>
+                <div class="col-3 col-md-3 text-end">Monto</div>
+              </div>
+              <div
+                class="body-table row"
+                *ngFor="let item of Pagos; let impar = odd; let par = even"
+                [ngClass]="{ transparent: par, colors: impar }"
+              >
+                <div class="col-4 col-md-5">
+                  <p>{{ item.name }}</p>
+                </div>
+                <div class="col-4 col-md-4">
+                  <p class="card-numbers">{{ item.fecha }}</p>
+                </div>
+                <div class="col-4 col-md-3 text-end">
+                  <p class="">{{ item.monto }}</p>
+                </div>
+                <div class="stepper col-12"></div>
+              </div>
+              <div class="body-table-pay row">
+                <div class="col-6">
+                  <p><strong>Monto a pagar</strong></p>
+                </div>
+                <div class="col-6 text-end">
+                  <p class=""><strong>$10000</strong></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- plan pago 2 -->
+          <div class="pay-two col-md-6 col-12">
+            <div class="card mt-2 mb-3">
+              <div class="body-table row">
+                <div class="title-radio col-12 mb-2">
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions2"
+                      id="inlineRadio4"
+                      value="option4"
+                    />
+                    <label class="form-check-label" for="inlineRadio4"
+                      >Plan pago de contado</label
+                    >
+                  </div>
+                </div>
+                <div class="stepper col-12"></div>
+              </div>
+              <div class="title-table row">
+                <div class="col-4 col-md-3 text-left">Descripcion</div>
+                <div class="col-8 col-md-9 text-end">Monto</div>
+              </div>
+              <div class="body-table row">
+                <div class="col-6">
+                  <p>Colegiatura de contado</p>
+                </div>
+                <div class="col-6 text-end">
+                  <p class="">$10000</p>
+                </div>
+                <div class="stepper col-12"></div>
+              </div>
+              <div class="body-table-pay row">
+                <div class="col-6">
+                  <p><strong>Monto a pagar</strong></p>
+                </div>
+                <div class="col-6 text-end">
+                  <p class=""><strong>$10000</strong></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toolbar-footer row no-gutters text-start">
+  <div class="col-md-12 button-toolbar">
+      <div class="col-12 button-area-line">
+        <div class="col-12 col-md-4 col-xl-2 p-0">
+          <dynamic-button
+            type="transparent"
+            title="Regresar a Horario"
+          ></dynamic-button>
+        </div>
+        <div class="col-12 col-md-4 col-xl-2 p-0">
+          <dynamic-button
+            type="green"
+            title="Confirmar Inscripción"
+            (click)="confirmInscription()"
+          ></dynamic-button>
+        </div>
+    </div>
+  </div>
+</div>
+

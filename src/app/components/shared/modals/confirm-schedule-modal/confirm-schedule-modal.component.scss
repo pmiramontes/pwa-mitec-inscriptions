@@ -1,0 +1,33 @@
+::ng-deep .modal-open {
+    overflow: overlay;
+  }
+
+  .modal-footer {
+      padding: 0 0.75rem 0.75rem;
+  }
+  
+  .title-modal,
+  .subtitle-modal{
+    font-size: 12px;
+    font-weight: 400;
+  }
+  
+  .subtitle-modal {
+    font-weight: 600;
+    margin-bottom: 0;
+  }
+  
+  .button-cancel {
+    background-color: rgb(92, 199, 128);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    padding: 7px 20px;
+    display: inline-block;
+    font-weight: 500;
+    font-size: 13px;
+    cursor: pointer;
+    width: auto;
+    max-width: 100%;
+  }
+  

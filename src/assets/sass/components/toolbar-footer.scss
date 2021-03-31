@@ -1,0 +1,46 @@
+.toolbar-footer {
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  background-color: rgb(22, 21, 21);
+  color: $white;
+  font-weight: 600;
+  .button-toolbar {
+    place-content: center;
+    display: flex;
+  }
+}
+
+.button-area-line {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  place-content: center;
+  width: 100%;
+  div {
+    margin: 0.5em;
+    text-decoration: none;
+    flex-grow: 1;
+    align-self: center;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .button-area-line {
+    display: block;
+    max-width: none;
+    margin-top: 1em;
+    div {
+      margin: 0;
+      margin-bottom: 1em;
+    }
+  }
+
+  .toolbar-footer {
+    height: 100%;
+  }
+}

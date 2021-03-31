@@ -1,0 +1,115 @@
+<div class="modal-header">
+  <h4 class="modal-title" id="modal-basic-title">
+    Formulario para usar otro seguro
+  </h4>
+  <button
+    type="button"
+    class="close"
+    aria-label="Close"
+    (click)="bsModalRef.hide()"
+  >
+    <span aria-hidden="true">×</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="row">
+    <div class="title-text col-12 mt-4 mb-2">
+      <span class="title">Carátula de póliza</span>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <div class="policy">
+        <p>Carátula de póliza</p>
+        <button type="button" class="btn-policy">Seleccionar archivo</button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="title-text col-12 mt-4 mb-2">
+      <span class="title">Formato de carta responsiva</span>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <div class="logo-tec">
+        <img src="../../../assets/images/TecLogo.png" width="30%" height="55" />
+        <span class="title-cancelation mt-2"
+          >Cancelación de SGMM
+          <p class="subtitle-letter">Carta responisva</p></span
+        >
+      </div>
+      <div class="row mt-5">
+        <div class="col-md-12 text-end">
+          <input type="text" placeholder="Ciudad" class="input-one" />
+          <span class="text-form">,</span>
+          <input type="text" placeholder="Estado" class="input-one" />
+          <span class="text-form">a</span>
+          <input type="text" placeholder="Día" class="input-two" />
+          <span class="text-form">de</span>
+          <input type="text" placeholder="Mes" class="input-one" />
+          <span class="text-form">del</span>
+          <input type="text" placeholder="Año" class="input-two" />
+        </div>
+        <div class="col-md-12 text-end">
+          <span class="text-form">Folio asignado</span>
+          <input
+            type="text"
+            placeholder="Folio generado por SIDI"
+            class="input-one"
+          />
+        </div>
+        <div class="textmovil-justify col-md-12 mt-5">
+          <span class="text-form">Yo,</span>
+          <input
+            type="text"
+            placeholder="Nombre del padre o tutor"
+            class="input-tree"
+          />
+          <span class="text-form"
+            >, hago constar que estoy enterado de la cobertura que ofrece la
+            póliza de Seguro de Gastos Médicos Mayores a través del Tecnológico
+            de Monterrey para sus alumnos, sin embargo, estoy de acuerdo en que
+            mi hijo(a)
+          </span>
+          <input
+            type="text"
+            placeholder="Nombre del alumno"
+            class="input-tree"
+          />
+          <span class="text-form">con matricula</span>
+          <input
+            type="text"
+            placeholder="Numero de matricula"
+            class="input-one"
+          />
+          <span class="text-form"
+            >lo haya cancelado durante su proceso de inscripción renunciando
+            expresamente a los beneficios del Seguro de Gastos Médicos Mayores
+            ya que cuenta con una póliza equivalente cuya carátula anexo y ante
+            la eventualidad de lo que ocurriera un accidente o enfermedad a mi
+            hijo (a), libero de toda responsabilidad al Tecnológico de Monterrey
+            y haré frente a la situación con mi póliza personal de Seguro y/o
+            con mis propios recursos
+          </span>
+        </div>
+        <div class="col-md-12 text-center mt-5 mb-3">
+          <p>Atentamente</p>
+          <input
+            type="text"
+            placeholder="Numero del padre o tutor"
+            class="input-firma"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal-footer">
+  <dynamic-button
+    type="link "
+    title="Regresar"
+    (click)="bsModalRef.hide()"
+  ></dynamic-button>
+  <button type="button" class="button-cancel">Enviar cancelación</button>
+</div>

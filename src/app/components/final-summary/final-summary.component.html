@@ -1,0 +1,268 @@
+<div class="content row">
+  <div class="card-container">
+    <div class="stepper col-md-12 mb-4">
+      <img width="auto" src="../../../assets/images/stepper-4.png" />
+    </div>
+    <div>
+      <div class="col-12 pr-0 pl-0">
+        <ul ngbNav #nav="ngbNav" [activeId]="2" class="nav-tabs">
+          <li [ngbNavItem]="1" class="col-6">
+            <a ngbNavLink>MI PERFIL</a>
+            <ng-template ngbNavContent>
+              <p>These navs will always stay in DOM and have no roles</p>
+            </ng-template>
+          </li>
+          <li [ngbNavItem]="2" class="col-6">
+            <a ngbNavLink>MI HORARIO</a>
+            <ng-template ngbNavContent>
+              <div class="row no-gutters text-start mt-4">
+                <div class="col-12">
+                  <p class="paragraph">
+                    <strong>Alejandro Hernández</strong>  Este es tu
+                    <strong> HORARIO PLANEADO</strong>  para el
+                    <strong> SEMESTRE AD21</strong>
+                  </p>
+                </div>
+              </div>
+              <div class="row no-gutters text-start">
+                <div class="col-12 button-area-line">
+                  <div class="col-12 col-md-3 p-0">
+                    <dynamic-button
+                      type="button "
+                      title="Ver en calendario"
+                      icon="event"
+                    ></dynamic-button>
+                  </div>
+                  <div class="col-12 col-md-3 p-0">
+                    <dynamic-button
+                      type="button "
+                      title="Enviar por correo"
+                      icon="mail"
+                    ></dynamic-button>
+                  </div>
+                  <div class="col-12 col-md-3 p-0">
+                    <dynamic-button
+                      type="button "
+                      title="Compartir"
+                      icon="share"
+                    ></dynamic-button>
+                  </div>
+                  <div class="col-12 col-md-3 p-0">
+                    <dynamic-button
+                      type="button "
+                      title="Imprimir"
+                      icon="insert_drive_file"
+                    ></dynamic-button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="stepper col-md-12 mb-5 mt-3"></div>
+              <div class="text-start">
+                <div class="title-text mb-2 p-0">
+                  <span class="title"
+                    >Materias a cursar en todos los Periodos (3 materias)</span
+                  >
+                </div>
+              </div>
+
+              <div>
+                <div class="card text-center mb-3"  *ngFor="let card of cards">
+                  <div class="header-card row no-gutters">
+                    <div class="col-8">
+                      <p class="title-text">
+                        <strong class="title-card">{{card.letra}}</strong>
+                        <span>
+                          <strong>{{card.code}} </strong>- {{card.materia}} <strong>{{card.group}}</strong></span
+                        >
+                      </p>
+                    </div>
+                    <div class="button-card col-4 ">
+                      <div class="title-credits">
+                        <button type="button" class="btn-optativa">optativa</button>
+                        <div style="text-align-last: start;">
+                          <button class="num-credits">
+                              3
+                          </button>
+                          <span class="text-credits">créditos</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="stepper col-12"></div>
+                  </div>
+                  <div class="body-card">
+                    <div class="title-tabl mt-2">
+                      <div class="row ">
+                        <div class="col-4 col-md-2 pr-0">
+                          <ul class="listItem">
+                            <li class="iconList">
+                              <span class="list-text">Profesor titular:</span>
+                            </li>
+                            <li class="iconList">
+                              <span class="list-text">Campus (Salón):</span>
+                            </li>
+                            <li class="iconList">
+                              <span class="list-text">Periodo (Fecha):</span>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="col-8 col-md-4 pl-0">
+                          <ul class="listItem">
+                            <li class="iconList">
+                              <img
+                              width="25"
+                              alt="Logo user"
+                              class="img-rounded"
+                              [src]='card.imgCard'
+                            /><strong>{{card.teacher}}</strong>
+                            </li>
+                            <li class="iconList">
+                              <strong>{{card.campus}}</strong>
+                            </li>
+                            <li class="iconList">
+                              <strong
+                                >{{card.periody}}</strong
+                              >
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="col-4 col-md-2 pr-0">
+                          <ul class="listItem">
+                            <li class="iconList">
+                              <span class="list-text">Días (Horario):</span>
+                            </li>
+                            <li class="iconList">
+                              <span class="list-text">Formato (Idioma):</span>
+                            </li>
+                            <li class="iconList">
+                              <span class="list-text">Socio formador:</span>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="col-8 col-md-4 pl-0">
+                          <ul class="listItem">
+                            <li class="iconList">
+                              <strong>{{card.days}}</strong>
+                            </li>
+                            <li class="iconList">
+                              <strong>{{card.format}}</strong>
+                            </li>
+                            <li class="iconList">
+                              <strong>{{card.socio}}</strong>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="footer-card"></div>
+                </div>
+              </div>
+              <div class="second-title text-start">
+                <div class="title-text mb-2 p-0">
+                  <span class="title"
+                    >Materias a cursar en todos los Periodos (3 materias)</span
+                  >
+                </div>
+              </div>
+              <div>
+                <div class="card text-center mb-3"  *ngFor="let card of cards">
+                  <div class="header-card row no-gutters">
+                    <div class="col-8 mt-1 mb-1">
+                      <p class="title-text">
+                        <strong class="title-card">{{card.letra}}</strong>
+                        <span>
+                          <strong>{{card.code}} </strong>- {{card.materia}} <strong>{{card.group}}</strong></span
+                        >
+                      </p>
+                    </div>
+                    <div class="button-card col-4 mt-1 mb-1">
+                      <div class="title-credits">
+                        <button type="button" class="btn-optativa">optativa</button>
+                        <div>
+                          <button class="num-credits">
+                              3
+                          </button>
+                          <span class="text-credits">créditos</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="body-card">
+                    <div class="stepper col-12"></div>
+                    <div class="title-tabl mt-2">
+                      <div class="row ">
+                        <div class="col-4 col-md-2 pr-0">
+                          <ul class="listItem">
+                            <li class="iconList">
+                              <span class="list-text">Profesor titular:</span>
+                            </li>
+                            <li class="iconList">
+                              <span class="list-text">Campus (Salón):</span>
+                            </li>
+                            <li class="iconList">
+                              <span class="list-text">Periodo (Fecha):</span>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="col-8 col-md-4 pl-0">
+                          <ul class="listItem">
+                            <li class="iconList">
+                              <img
+                              width="25"
+                              alt="Logo user"
+                              class="img-rounded"
+                              [src]='card.imgCard'
+                            /><strong>{{card.teacher}}</strong>
+                            </li>
+                            <li class="iconList">
+                              <strong>{{card.campus}}</strong>
+                            </li>
+                            <li class="iconList">
+                              <strong
+                                >{{card.periody}}</strong
+                              >
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="col-4 col-md-2 pr-0">
+                          <ul class="listItem">
+                            <li class="iconList">
+                              <span class="list-text">Días (Horario):</span>
+                            </li>
+                            <li class="iconList">
+                              <span class="list-text">Formato (Idioma):</span>
+                            </li>
+                            <li class="iconList">
+                              <span class="list-text">Socio formador:</span>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="col-8 col-md-4 pl-0">
+                          <ul class="listItem">
+                            <li class="iconList">
+                              <strong>{{card.days}}</strong>
+                            </li>
+                            <li class="iconList">
+                              <strong>{{card.format}}</strong>
+                            </li>
+                            <li class="iconList">
+                              <strong>{{card.socio}}</strong>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="footer-card"></div>
+                </div>
+              </div>
+            </ng-template>
+          </li>
+        </ul>
+
+        <div [ngbNavOutlet]="nav" class="mt-2"></div>
+      </div>
+    </div>
+  </div>
+</div>

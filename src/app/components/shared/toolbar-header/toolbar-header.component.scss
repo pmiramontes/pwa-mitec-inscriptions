@@ -1,0 +1,117 @@
+@import "/src/assets/sass/utilities/variables.scss";
+
+.toolbar {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  background-color: $blue;
+  color: $white;
+  font-weight: 600;
+  .spacer {
+    flex: 1;
+  }
+}
+
+.toolbar {
+  img {
+    margin: 0 35px;
+  }
+  .img-rounded {
+    margin-right: 55px;
+    margin-left: 15px;
+  }
+}
+
+.img-rounded {
+  border-radius: 50%;
+}
+
+.button-help {
+  background-color: transparent;
+  border: 1px solid $white;
+  border-radius: 15px;
+  color: $white;
+  padding: 6px 22px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.dropdown-toggle {
+  color: $white;
+  margin: 0 33px;
+}
+
+.dropdown-toggle::after {
+  content: "expand_more" !important;
+  font-family: Material Icons;
+  color: $white;
+  vertical-align: middle;
+  font-size: 22px;
+  margin-left: 0 !important;
+  font-weight: 500;
+}
+
+.dropdown-item {
+  color: $blue;
+  &:hover {
+    color: $black;
+  }
+}
+
+a::after {
+  border-top: none !important;
+}
+
+.nav-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 575px) {
+  .navbar-nav,
+  .button-help {
+    display: none;
+  }
+
+  .toolbar {
+    img {
+      margin: 0 15px !important;
+    }
+    .img-rounded {
+      margin-right: 0;
+      margin-left: 0;
+    }
+  }
+
+  .nav-mobile {
+    background-color: $blue;
+    display: flex;
+    flex-flow: row-reverse;
+    .navbar-nav,
+    .button-help {
+      display: block;
+    }
+    .content-btn {
+      margin: 0 15px;
+      align-self: center;
+    }
+  }
+
+  .content-dropdown {
+    margin-right: auto;
+  }
+
+  .dropdown-toggle {
+    margin: 0 15px !important;
+  }
+
+  .button-help {
+    padding: 6px 35px !important;
+  }
+}

@@ -1,0 +1,27 @@
+<div class="modal-header">
+    <h4 class="modal-title">{{titleHeader}}</h4>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="bsModalRef.hide()"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="row">
+      <div class="col-12">
+        <p class="title-modal">
+            {{contentBody}}
+        </p>
+      </div>
+      <div class="col-12">
+        <p class="subtitle-modal">{{contentFooter}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="button-continue">Continuar</button>
+  </div>
+  

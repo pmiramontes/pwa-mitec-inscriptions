@@ -1,0 +1,193 @@
+<div class="content row">
+  <div class="card-container">
+    <div class="stepper col-md-12">
+      <img width="auto" src="../../../assets/images/stepper.png" />
+    </div>
+    <div class="row no-gutters">
+      <div class="clock-config">
+        <div>
+          <mat-icon class="material-icons-round" aria-label="alarm icon"
+            >alarm</mat-icon
+          >
+        </div>
+        <div class="clock-text">
+          <span class="schedule">Tu turno para inscribir tu horario es:</span>
+          <span class="hour-start">11 Enero 2021 - (11:00 AM)</span>
+        </div>
+        <div *ngIf="edited" class="card-info">
+          <p class="info-hour">
+            Faltan 10 días, 12 horas, 34 minutos <br />para iniciar tu
+            inscripción
+          </p>
+        </div>
+        <div *ngIf="!edited" class="register-schedule col-12 col-md-3">
+              <dynamic-button type="button1 green" title="Inscribir mi horario"></dynamic-button>
+        </div>
+      </div>
+    </div>
+    <div class="stepper col-12"></div>
+    <div class="row no-gutters">
+      <div class="title-text col-12 mt-4 mb-2">
+        <span class="title">Apoyos educativos</span>
+        <button type="button" class="btn-help">Ayuda</button>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-6">
+              <p>Beca 1</p>
+              <p class="quantity">$10000.00</p>
+            </div>
+            <div class="col-6">
+              <p>Beca 2</p>
+              <p class="quantity">$10000.00</p>
+            </div>
+            <div class="col-12 mt-3">
+              <p>Beca 3</p>
+              <p class="quantity">$10000.00</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row no-gutters">
+
+      <div class="title-text col-12 mt-4 mb-2">
+        <span class="title">Seguro de Gastos Médcios Mayores</span>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-12 col-md-6">
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="inlineRadioOptions"
+                  id="inlineRadio1"
+                  value="option1"
+                />
+                <label class="form-check-label" for="inlineRadio1"
+                  >Deseo contratar SGMM <strong>($3,900.00)</strong></label
+                >
+              </div>
+            </div>
+            <div class="col-12 col-md-6">
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="inlineRadioOptions"
+                  id="inlineRadio2"
+                  value="option2"
+                  (click)="openCancelSGSM()"
+                />
+                <label class="form-check-label" for="inlineRadio2"
+                  >Cancelar SGMM</label
+                >
+              </div>
+            </div>
+            <div class="panel-coverage col-12">
+              <a href="#">
+                <mat-icon class="material-icons-round" aria-label="alarm icon"
+                  >add</mat-icon
+                >
+                <span>Cambiar a cobertura máxima</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="card mt-2 col-12">
+        <div class="card-body">
+          <div class="row">
+            <p>Seguro por colegiatura</p>
+            <p class="quantity">$1,000.00</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row no-gutters">
+      <div class="title-text col-12 mt-4 mb-2">
+        <span class="title">Selección de plan de pago</span>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-12 col-md-6">
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="inlineRadioOptions2"
+                  id="inlineRadio3"
+                  value="option3"
+                />
+                <label class="form-check-label" for="inlineRadio3"
+                  >Plan 5 parcialidades</label
+                >
+              </div>
+            </div>
+            <div class="col-12 col-md-6">
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="inlineRadioOptions2"
+                  id="inlineRadio4"
+                  value="option4"
+                />
+                <label class="form-check-label" for="inlineRadio4"
+                  >Plan pago de contado</label
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row no-gutters">
+      <div class="title-text col-12 mt-4 mb-2">
+        <span class="title">Datos de facturación</span>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-12 col-md-6 mb-3">
+              <label class="form-label">Nombre</label>
+              <input type="text" class="form-control" />
+            </div>
+            <div class="col-12 col-md-6 mb-3">
+              <label class="form-label">Dirección</label>
+              <input type="text" class="form-control" />
+            </div>
+            <div class="col-12 col-md-6 mb-3">
+              <label class="form-label">RFC</label>
+              <input type="text" class="form-control" />
+            </div>
+            <div class="col-12 col-md-6 mb-3">
+              <label class="form-label">Correo</label>
+              <input type="text" class="form-control" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row no-gutters mt-4">
+      <div class="col-12 button-content">
+        <div class="col-12 col-md-3 p-0">
+          <dynamic-button
+            type="button "
+            title="Guardar cambios"
+          ></dynamic-button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

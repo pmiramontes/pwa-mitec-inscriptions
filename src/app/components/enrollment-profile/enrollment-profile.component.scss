@@ -1,0 +1,148 @@
+@import "/src/assets/sass/utilities/variables.scss";
+
+.content {
+  display: flex;
+  margin: 5px auto 32px;
+  max-width: 980px;
+  flex-direction: column;
+  text-align: center;
+}
+
+.clock-config {
+  display: inline-flex;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  justify-content: center;
+  mat-icon {
+    font-size: 4.9em;
+    align-items: center;
+    color: rgb(106, 106, 129);
+    height: 1em !important;
+    width: 1em !important;
+  }
+}
+
+.clock-text {
+  display: inline-grid;
+  justify-items: flex-start;
+  vertical-align: text-bottom;
+  margin-left: 0.5em;
+  line-height: 1.5;
+}
+
+.schedule {
+  align-self: end;
+  font-weight: 600;
+  color: $black;
+}
+
+.hour-start {
+  font-size: 21px;
+  color: rgb(108, 108, 126);
+}
+
+.card-info {
+  border: 1px solid rgb(106, 106, 129);
+  border-radius: 0.5em;
+  background-color: rgb(106, 106, 129);
+  color: $white;
+  margin-left: 4em;
+  align-self: center;
+}
+
+.register-schedule {
+  border-radius: 0.5em;
+  color: $white;
+  margin-left: 5em;
+  align-self: center;
+}
+.info-hour {
+  text-align: justify;
+  font-size: 14px;
+  line-height: initial;
+  padding: 7px 12px 7px 12px;
+  margin-bottom: 0;
+  p {
+    margin-bottom: 0 !important;
+  }
+}
+
+.btn-help {
+  background-color: transparent;
+  border: 1px solid #808080;
+  border-radius: 11px;
+  color: gray;
+  padding: 3px 23px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 500;
+  margin: 0px 20px;
+  cursor: pointer;
+}
+
+.card-body {
+  text-align: initial;
+  p {
+    margin-bottom: 0 !important;
+  }
+}
+
+.quantity {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 2;
+  color: $black;
+}
+
+.form-check-label{
+  strong {
+    color: $black;
+  }
+}
+
+.form-control {
+  height: calc(0.75em + 0.75rem + 2px);
+  border-radius: 0.1rem;
+}
+
+.form-check {
+  margin-bottom: 0 !important;
+}
+
+.form-check-inline .form-check-input {
+  margin-right: 1em;
+}
+
+.panel-coverage {
+  color: $blue;
+  margin-top: 0.5em;
+  padding: 0 0.8em;
+  span {
+    margin-left: 0.6em;
+    line-height: 2;
+  }
+  a {
+    text-decoration: none;
+    display: flex;
+  }
+}
+
+.button-content {
+  text-align: -webkit-right;
+}
+
+@media screen and (max-width: 575px) {
+  .clock-config {
+    display: block;
+    margin-bottom: 1em;
+    padding: 0;
+  }
+
+  .card-info,
+  .clock-text,
+  .register-schedule{
+    margin-left: 0;
+    padding: 0;
+  }
+}

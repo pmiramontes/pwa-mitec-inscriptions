@@ -1,0 +1,35 @@
+<div class="modal-header">
+  <h4 class="modal-title">Aviso confirmación de horario</h4>
+  <button
+    type="button"
+    class="close"
+    aria-label="Close"
+    (click)="bsModalRef.hide()"
+  >
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="row">
+    <div class="col-12">
+      <p class="title-modal">
+        Asegúrate de haber inscrito todas tus Unidades de Formación y en caso de
+        que aplique, también tus actividades de formación LiFE. Así como estar
+        de acuerdo con los apoyos educativos asignados, plan de pagos y seguros.
+        Cualquier cambio posterior a tu confirmación es un ajuste a tu estado de
+        cuenta y podría generar un cargo adicional.
+      </p>
+    </div>
+    <div class="col-12">
+      <p class="subtitle-modal">¿Estas seguro de que quieres confirmar tu inscripción en este momento?</p>
+    </div>
+  </div>
+</div>
+<div class="modal-footer">
+  <dynamic-button
+  type="link "
+  title="Regresar"
+  (click)="bsModalRef.hide()"
+></dynamic-button>
+  <button type="button" class="button-cancel">Confirmar inscripción</button>
+</div>

@@ -1,0 +1,69 @@
+@import "/src/assets/sass/utilities/variables.scss";
+
+.info-mount {
+  font-size: 13px;
+  line-height: initial;
+  color: gray;
+  margin-top: 1.5em;
+}
+
+.plus-link,
+.cancel-link {
+  font-size: 12px;
+  font-weight: 600;
+  color: $blue;
+  padding: 0 0.8em;
+  span {
+    margin-left: 0.6em;
+    line-height: 2;
+  }
+  a {
+    text-decoration: none;
+    display: flex;
+  }
+}
+
+.cancel-link {
+  a {
+    color: $red;
+  }
+  mat-icon {
+    font-size: 22px;
+  }
+  span {
+    cursor: pointer;
+  }
+}
+
+.title-radio {
+  text-align: start;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 0;
+}
+
+.form-check-inline .form-check-input {
+  margin-right: 0.8em;
+}
+
+.content-pay {
+  display: flex;
+  .pay-one {
+    padding-left: 0;
+  }
+  .pay-two {
+    padding-right: 0;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .content-pay {
+    display: block;
+    .pay-one {
+      padding-right: 0;
+    }
+    .pay-two {
+      padding-left: 0;
+    }
+  }
+}

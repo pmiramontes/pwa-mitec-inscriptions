@@ -1,0 +1,164 @@
+<div class="content row">
+  <div class="card-container">
+    <div class="stepper col-md-12 mb-4">
+      <img width="auto" src="../../../assets/images/stepper-4.png" />
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12 mb-4">
+          <div class="card-life">
+            <span class="title">Aviso Estado de cuenta</span>
+            <p class="info-hour mt-2">
+              Para consultar tu estado de cuenta, haz click en
+              <strong>Pagar</strong>
+            </p>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="title-text mb-2">
+            <span class="title">Estado de cuenta final de tu inscripción</span>
+          </div>
+          <div class="stepper col-12"></div>
+        </div>
+      </div>
+
+      <!-- tabla resumen -->
+      <div class="container-fluid">
+        <div class="row mt-4">
+          <div class="col-12">
+            <div class="title-text mb-2">
+              <span class="title"
+                >Resumen de colegiatura y Apoyos educativos</span
+              >
+            </div>
+            <div class="stepper col-12"></div>
+          </div>
+          <div class="title-text col-12">
+            <div class="title-table row">
+              <div class="col-6 col-md-4">Descripcion</div>
+              <div class="col-3 col-md-4 text-center">Cargo</div>
+              <div class="col-3 col-md-4 text-center">Abono</div>
+            </div>
+            <div class="card">
+              <div class="body-table row">
+                <div class="col-6 col-md-4">
+                  <p>Colegiatura Profesional</p>
+                </div>
+                <div class="col-3 col-md-4">
+                  <p class="card-numbers">$10000</p>
+                </div>
+                <div class="stepper col-12"></div>
+              </div>
+              <div class="body-table-pay row">
+                <div class="col-9 col-md-8">
+                  <p>Descuento por beca</p>
+                </div>
+                <div class="col-3 col-md-4">
+                  <p class="card-numbers">$10000</p>
+                </div>
+                <div class="stepper col-12"></div>
+              </div>
+              <div class="body-table row">
+                <div class="col-6 col-md-4">
+                  <p>Seguro gastos médicos mayores</p>
+                </div>
+                <div class="col-3 col-md-4">
+                  <p class="card-numbers">$10000</p>
+                </div>
+                <div class="stepper col-12"></div>
+              </div>
+            </div>
+            <div class="card mt-2">
+              <div class="body-table row">
+                <div class="col-6 col-md-4">
+                  <p><strong>Total Cargos</strong></p>
+                </div>
+                <div class="col-3 col-md-4">
+                  <p class="card-numbers">$10000</p>
+                </div>
+                <div class="stepper col-12"></div>
+              </div>
+              <div class="body-table-pay row">
+                <div class="col-9 col-md-8">
+                  <p><strong>Total Abonos</strong></p>
+                </div>
+                <div class="col-3 col-md-4">
+                  <p class="card-numbers">$7000</p>
+                </div>
+                <div class="stepper col-12"></div>
+              </div>
+              <div class="body-table row">
+                <div class="col-6 col-md-4">
+                  <p><strong>Monto a pagar</strong></p>
+                </div>
+                <div class="col-3 col-md-4">
+                  <p class="card-numbers"><strong>$10000</strong></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- plan de pago -->
+        <div class="row mt-4">
+          <div class="col-12">
+            <div class="title-text mb-2">
+              <span class="title">Plan de pago: </span>
+            </div>
+            <div class="stepper col-12"></div>
+          </div>
+          <div class="title-text col-12">
+            <div class="title-table row">
+              <div class="col-6 col-md-4">Descripcion</div>
+              <div class="col-3 col-md-4 text-center">Fecha de vencimiento</div>
+              <div class="col-3 col-md-4 text-center">Monto</div>
+            </div>
+            <div class="card">
+              <div
+                class="body-table row"
+                *ngFor="let item of Plan; let impar = odd; let par = even"
+                [ngClass]="{ transparent: par, colors: impar }"
+              >
+                <div class="col-6 col-md-4">
+                  <p>{{ item.name }}</p>
+                </div>
+                <div class="col-3 col-md-4">
+                  <p class="card-numbers">{{ item.fecha }}</p>
+                </div>
+                <div class="col-3 col-md-4">
+                  <p class="card-numbers">{{ item.monto }}</p>
+                </div>
+                <div class="stepper col-12"></div>
+              </div>
+              <div class="body-table row">
+                <div class="col-9 col-md-8">
+                  <p><strong>Total</strong></p>
+                </div>
+
+                <div class="col-3 col-md-4">
+                  <p class="card-numbers">$7000</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toolbar-footer row no-gutters text-start">
+  <div class="col-md-12 button-toolbar">
+    <div class="col-12 button-area-line">
+      <div class="col-12 col-md-2 p-0">
+        <dynamic-button
+          type="transparent"
+          title="Regresar a Horario"
+        ></dynamic-button>
+      </div>
+      <div class="col-12 col-md-2 p-0">
+        <dynamic-button type="green" title="Pagar"></dynamic-button>
+      </div>
+    </div>
+  </div>
+</div>

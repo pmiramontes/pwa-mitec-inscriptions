@@ -1,0 +1,87 @@
+<div class="row no-gutters">
+  <div class="col-12 pr-0 pl-0">
+    <ul ngbNav #nav="ngbNav" [activeId]="1" class="nav-tabs">
+      <li [ngbNavItem]="1" class="col-3">
+        <a ngbNavLink>BLOQUES</a>
+        <ng-template ngbNavContent>
+          <div class="contenedor">
+            <div>
+              <strong>Bloques disciplinarios</strong>
+              <mat-icon
+                class="material-icons-outlined"
+                aria-label="alarm icon"
+                placement="top"
+                ngbTooltip="Explicación sobre los bloques de este tipo"
+                >info</mat-icon
+              >
+            </div>
+            <div class="row no-gutters">
+              <div class="col-3">
+                <p>aqui va card</p>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </li>
+      <li [ngbNavItem]="2" class="col-3">
+        <a ngbNavLink>MATERIAS</a>
+        <ng-template ngbNavContent>
+          <div class="contenedor">
+            <div>
+              <strong>Materias disciplinarias</strong>
+              <mat-icon
+                class="material-icons-outlined"
+                aria-label="alarm icon"
+                placement="top"
+                ngbTooltip="Explicación sobre las Materias de este tipo"
+                >info</mat-icon
+              >
+            </div>
+          </div>
+        </ng-template>
+      </li>
+      <li [ngbNavItem]="3" class="col-3">
+        <a ngbNavLink>SEMANAS TEC</a>
+        <ng-template ngbNavContent>
+          <div class="contenedor">
+            <div>
+              <strong>Semanas TEC I</strong>
+              <mat-icon
+                class="material-icons-outlined"
+                aria-label="alarm icon"
+                placement="top"
+                ngbTooltip="Explicación sobre las Semanas TEC de este tipo"
+                >info</mat-icon
+              >
+            </div>
+          </div>
+        </ng-template>
+      </li>
+      <li [ngbNavItem]="4" class="col-3">
+        <a ngbNavLink>LIFE</a>
+        <ng-template ngbNavContent>
+          <div class="contenedor">
+            <div>
+              <strong>Materias LiFE</strong>
+              <mat-icon
+                class="material-icons-outlined"
+                aria-label="alarm icon"
+                placement="top"
+                ngbTooltip="Explicación sobre las Materias LiFE de este tipo"
+                >info</mat-icon
+              >
+            </div>
+            <div>
+              <p>
+                En caso de inscribir más de dos materias LiFE, se generará un
+                costo adicional por materia LiFE que se vera reflejado en el
+                Estado de Cuenta.
+              </p>
+            </div>
+          </div>
+        </ng-template>
+      </li>
+    </ul>
+    <div [ngbNavOutlet]="nav" class="mt-4"></div>
+  </div>
+</div>

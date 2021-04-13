@@ -1,0 +1,42 @@
+mat-icon {
+  vertical-align: top;
+  color: #3797f7;
+  font-size: 20px;
+  margin-left: 0.5em;
+}
+
+.nav-item {
+  padding: 0;
+  a {
+    color: silver;
+  }
+  .active {
+    color: black;
+    font-weight: 600;
+  }
+}
+.nav-link {
+  height: 35px;
+  padding: 0 24px;
+  cursor: pointer;
+  box-sizing: border-box;
+  opacity: 0.6;
+  text-align: center;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+  position: relative;
+  width: 100%;
+}
+
+a.active {
+  border-bottom: 2px solid #3797f7 !important;
+  opacity: 1;
+}
+
+.nav-tabs .nav-link {
+  border: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}

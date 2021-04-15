@@ -1,0 +1,131 @@
+@import "/src/assets/sass/utilities/variables.scss";
+
+.content-title{
+    display: flex;
+    font-size: 11px;
+    padding-left: 7px;
+    padding-right: 7px;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    .text-class {
+      line-height: normal;
+      margin-bottom: 0;
+      margin-right: auto;
+      width: 85%;
+    }
+    .title-identify {
+      margin-left: auto;
+    }
+    .identify-num {
+      background-color: $blueOcean;
+      color: white;
+      border-radius: 100%;
+      font-size: 10px;
+      font-weight: 600;
+      padding: 0px 5px 0px 5px;
+      border: none;
+      height: 16px;
+      display: inline-flex;
+      line-height: 1.65;
+      margin-right: auto;
+    }
+  
+    .identify-num.yellow {
+      background-color: $yellowGold;
+    }
+  
+    .identify-num.orange {
+      background-color: $redOrange;
+    }
+  
+    .identify-num.green {
+      background-color: $green;
+    }
+  
+    .identify-num.golden {
+      background-color: darkgoldenrod;
+    }
+  
+    .identify-num.gray {
+      background-color: gray;
+    }
+  
+    .identify-num.transparent {
+      background-color: transparent;
+      height: 0px;
+    }
+  }
+  
+  .content-titleButton {
+    display: flex;
+    font-size: 8px;
+    padding-left: 7px;
+    padding-right: 7px;
+    .buttonCard {
+      background-color: $blueOcean;
+      color: white;
+      border: none;
+      border-radius: 0.25rem;
+      padding: 3px 8px;
+      text-transform: uppercase;
+      font-size: 8px;
+      font-weight: 500;
+      text-align: center;
+    }
+  
+    .buttonCard.yellow {
+      background-color: $yellowGold;
+    }
+  
+    .buttonCard.orange {
+      background-color: $redOrange;
+    }
+  
+    .buttonCard.green {
+      background-color: $green;
+    }
+  
+    .buttonCard.golden {
+      background-color: darkgoldenrod;
+    }
+  
+    .buttonCard.gray {
+      background-color: gray;
+    }
+  
+    .text-group {
+      margin-left: auto;
+      color: silver;
+    }
+  }
+  
+  .title-credits {
+    background-color: #fafafa;
+    border-bottom-left-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    .content-button {
+      text-align-last: center;
+      margin: -3px;
+      .num-credits {
+        background-color: orange;
+        border-radius: 50%;
+        font-size: 8px;
+        font-weight: bold;
+        margin-right: 0.3em;
+        padding: 0px 4px;
+        border: none;
+        height: 12px;
+        display: inline-flex;
+        line-height: 1.5;
+      }
+      .text-credits {
+        text-transform: uppercase;
+        font-size: 8px;
+        font-weight: 600;
+        color: gray;
+      }
+    }
+  }
+
+  
+  

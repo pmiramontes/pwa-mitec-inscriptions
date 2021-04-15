@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +15,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+
 
 
 // ModalRoot
@@ -35,6 +38,8 @@ import { ConfirmScheduleModalComponent } from './components/shared/modals/confir
 import { DynamicModalComponent } from './components/shared/modals/dynamic-modal/dynamic-modal.component';
 import { SelectionTrainingUnitsComponent } from './components/selection-training-units/selection-training-units.component';
 import { TrainingBlocksComponent } from './components/shared/training-blocks/training-blocks.component';
+import { DynamicCardsTrainingComponent } from './components/shared/dynamic-cards-training/dynamic-cards-training.component';
+import { SearchFiltersComponent } from './components/shared/search-filters/search-filters.component';
 
 @NgModule({
   declarations: [
@@ -52,10 +57,13 @@ import { TrainingBlocksComponent } from './components/shared/training-blocks/tra
     DynamicModalComponent,
     SelectionTrainingUnitsComponent,
     TrainingBlocksComponent,
+    DynamicCardsTrainingComponent,
+    SearchFiltersComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
     }),
@@ -65,6 +73,7 @@ import { TrainingBlocksComponent } from './components/shared/training-blocks/tra
     NgbModule,
     ModalModule.forRoot(),
     CollapseModule.forRoot(),
+    NgMultiSelectDropDownModule.forRoot(),
     MatSidenavModule,
     MatListModule
   ],

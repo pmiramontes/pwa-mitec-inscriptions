@@ -1,0 +1,32 @@
+<div class="card mt-1 mb-3" style="max-width: 95%; cursor: pointer;">
+    <div
+      class="content-title col-12"
+    >
+      <p class="text-class">
+        <strong>{{ code }} </strong>- {{ title }}
+      </p>
+      <p class="title-identify">
+        <strong *ngIf="identify" class="identify-num {{ color }}" >{{ identify }}</strong>
+      </p>
+    </div>
+    <div class="content-titleButton col-12 mb-1">
+      <span class="buttonCard  {{ type }}">
+        {{ titleButton }}
+      </span>
+  
+      <span class="text-group">{{ groups }}</span>
+    </div>
+    <div class="stepper col-12 pl-1 pr-1"></div>
+    <div class="title-credits">
+      <div class="content-button">
+        <button class="num-credits">
+          {{ numCredits }}
+        </button>
+        <span class="text-credits">créditos</span>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  

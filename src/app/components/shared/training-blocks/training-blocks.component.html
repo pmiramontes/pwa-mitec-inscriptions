@@ -16,10 +16,70 @@
               >
             </div>
             <div class="row no-gutters">
-              <div class="col-3">
-                <p>aqui va card</p>
+              <div class="col-6 col-md-3" *ngFor="let card of CardMater">
+                <dynamic-cards-training
+                  type="buttonCard "
+                  code="{{ card.code }}"
+                  title="{{ card.materia }}"
+                  identify="{{ card.identificador }}"
+                  color="identify-num {{ card.color }}"
+                  titleButton="{{ card.button }}"
+                  groups="{{ card.groups }}"
+                  numCredits="{{ card.credits }}"
+                ></dynamic-cards-training>
               </div>
             </div>
+            <div class="stepper col-12 pl-1 pr-1 mt-4 mb-4"></div>
+            <div>
+              <strong>Bloque Tipo 2</strong>
+              <mat-icon
+                class="material-icons-outlined"
+                aria-label="alarm icon"
+                placement="top"
+                ngbTooltip="Explicación sobre los bloques de este tipo"
+                >info</mat-icon
+              >
+            </div>
+            <div class="row no-gutters">
+              <div class="col-6 col-md-3">
+                <dynamic-cards-training
+                  type="buttonCard orange"
+                  code="EH1001B"
+                  title="Inmersión y esperimentación creativa"
+                  identify="R"
+                  color="identify-num orange"
+                  titleButton="DISCIPLINARIA"
+                  groups="3 grupos disponibles"
+                  numCredits="3"
+                ></dynamic-cards-training>
+              </div>
+            </div>
+            <div class="stepper col-12 pl-1 pr-1 mt-4 mb-4"></div>
+            <div>
+              <strong>Bloque Tipo 3</strong>
+              <mat-icon
+                class="material-icons-outlined"
+                aria-label="alarm icon"
+                placement="top"
+                ngbTooltip="Explicación sobre los bloques de este tipo"
+                >info</mat-icon
+              >
+            </div>
+            <div class="row no-gutters">
+              <div class="col-6 col-md-3">
+                <dynamic-cards-training
+                  type="buttonCard yellow"
+                  code="EH1001B"
+                  title="Inmersión y esperimentación creativa"
+                  identify="R"
+                  color="identify-num yellow"
+                  titleButton="DISCIPLINARIA"
+                  groups="3 grupos disponibles"
+                  numCredits="3"
+                ></dynamic-cards-training>
+              </div>
+            </div>
+            <div class="stepper col-12 pl-1 pr-1 mt-4 mb-4"></div>
           </div>
         </ng-template>
       </li>
@@ -33,10 +93,75 @@
                 class="material-icons-outlined"
                 aria-label="alarm icon"
                 placement="top"
-                ngbTooltip="Explicación sobre las Materias de este tipo"
+                ngbTooltip="Explicación sobre los bloques de este tipo"
                 >info</mat-icon
               >
             </div>
+            <div class="row no-gutters">
+              <div class="col-6 col-md-3">
+                <dynamic-cards-training
+                  type="buttonCard "
+                  code="EH1001B"
+                  title="Inmersión y esperimentación creativa"
+                  identify="R"
+                  color="identify-num "
+                  titleButton="DISCIPLINARIA"
+                  groups="3 grupos disponibles"
+                  numCredits="3"
+                ></dynamic-cards-training>
+              </div>
+            </div>
+            <div class="stepper col-12 pl-1 pr-1 mt-4 mb-4"></div>
+            <div>
+              <strong>Materias optativas</strong>
+              <mat-icon
+                class="material-icons-outlined"
+                aria-label="alarm icon"
+                placement="top"
+                ngbTooltip="Explicación sobre los bloques de este tipo"
+                >info</mat-icon
+              >
+            </div>
+            <div class="row no-gutters">
+              <div class="col-6 col-md-3">
+                <dynamic-cards-training
+                  type="buttonCard green"
+                  code="EH10021C"
+                  title="Optativa de matemáticas y ciencia"
+                  identify="R"
+                  color="identify-num green"
+                  titleButton="OPTATIVA"
+                  groups="3 grupos disponibles"
+                  numCredits="3"
+                ></dynamic-cards-training>
+              </div>
+            </div>
+            <div class="stepper col-12 pl-1 pr-1 mt-4 mb-4"></div>
+            <div>
+              <strong>Materias Tipo 3</strong>
+              <mat-icon
+                class="material-icons-outlined"
+                aria-label="alarm icon"
+                placement="top"
+                ngbTooltip="Explicación sobre los bloques de este tipo"
+                >info</mat-icon
+              >
+            </div>
+            <div class="row no-gutters">
+              <div class="col-6 col-md-3">
+                <dynamic-cards-training
+                  type="buttonCard yellow"
+                  code="EZC102D"
+                  title="Nombre de mteria de este tipo de template"
+                  identify="P"
+                  color="identify-num yellow"
+                  titleButton="TIPO 3"
+                  groups="3 grupos disponibles"
+                  numCredits="3"
+                ></dynamic-cards-training>
+              </div>
+            </div>
+            <div class="stepper col-12 pl-1 pr-1 mt-4 mb-4"></div>
           </div>
         </ng-template>
       </li>
@@ -78,6 +203,21 @@
                 Estado de Cuenta.
               </p>
             </div>
+            <div class="row no-gutters">
+              <div class="col-6 col-md-3">
+                <dynamic-cards-training
+                  type="buttonCard gray"
+                  code="LiF1001B"
+                  title="Arte y Cultura"
+                  identify=" "
+                  color="identify-num transparent"
+                  titleButton="LiFE"
+                  groups="3 grupos disponibles"
+                  numCredits="3"
+                ></dynamic-cards-training>
+              </div>
+            </div>
+            <div class="stepper col-12 pl-1 pr-1 mt-4 mb-5"></div>
           </div>
         </ng-template>
       </li>

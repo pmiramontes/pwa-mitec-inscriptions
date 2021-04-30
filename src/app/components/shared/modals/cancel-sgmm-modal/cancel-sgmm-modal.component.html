@@ -7,109 +7,164 @@
     class="close"
     aria-label="Close"
     (click)="bsModalRef.hide()"
-  >
+    >
     <span aria-hidden="true">×</span>
   </button>
 </div>
 <div class="modal-body">
-  <div class="row">
-    <div class="title-text col-12 mt-4 mb-2">
-      <span class="title">Carátula de póliza</span>
+  <div class="card mt-3">
+    <div class="card-body">
+      <div class="row no-gutters">
+        <div class="col-12">
+          <p class="title-steps">Pasos para cancelar tu seguro</p>
+          <ul class="steps-follow">
+            <li class="list-steps">
+              Descarga el formato de Carta Responisva y pide al responsable del pago de tu colegiatura que la llene y firme.
+              <a href="/">Descargar formato de Carta Responsiva</a>
+            </li>
+            <li class="list-steps">
+              Captura los datos solicitados a continuación.
+            </li>
+            <li class="list-steps">
+              Anexa la Carta responisva y la carátula de poliza de tu seguro, ambas en formato PDF, la cual debe estar vigente durante el periodo academico completo.
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="card">
-    <div class="card-body">
+  <div class="row">
+    <div class="title-text col-12 mt-3 mb-2">
+      <span class="title">Tipo de póliza</span>
+    </div>
+    <div class="col-12">
+      <div class="form-check form-check-inline">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="inlineRadioOptions"
+          id="inlineRadio5"
+          value="option5"
+        />
+        <label class="form-check-label" for="inlineRadio5"
+          >Individual</label
+        >
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="form-check form-check-inline">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="inlineRadioOptions"
+          id="inlineRadio5"
+          value="option5"
+        />
+        <label class="form-check-label" for="inlineRadio5"
+          >Colectiva</label
+        >
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="title-text col-12 mt-3 mb-1">
+      <span class="title">Forma de pago de póliza</span>
+    </div>
+    <div class="col-12">
+      <select class="form-select form-select-sm" aria-label="form-select-sm example">
+        <option selected>Mensual</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="title-text col-12 mt-3 mb-1">
+      <span class="title">Compañía de seguro</span>
+    </div>
+    <div class="col-12">
+      <div class="input-group input-group-sm">
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="title-text col-12 mt-3 mb-1">
+      <span class="title">Número de póliza</span>
+    </div>
+    <div class="col-12">
+      <div class="input-group input-group-sm">
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="title-text col-12 mt-3 mb-1">
+      <span class="title">Suma asegurada</span>
+    </div>
+    <div class="col-12">
+      <div class="input-group input-group-sm">
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="title-text col-12 mt-3 mb-1">
+      <span class="title">Número de certificado (Colectivo o empresa)</span>
+    </div>
+    <div class="col-12">
+      <div class="input-group input-group-sm">
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="title-text col-12 mt-3 mb-1">
+      <span class="title">Fecha inicio de vigencia</span>
+    </div>
+    <div class="col-12">
+      <div class="input-group input-group-sm">
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="title-text col-12 mt-3 mb-1">
+      <span class="title">Carta de justificación</span>
+    </div>
+    <div class="col-12">
       <div class="policy">
-        <p>Carátula de póliza</p>
+        <p>nombre de archivo.pdf</p>
         <button type="button" class="btn-policy">Seleccionar archivo</button>
       </div>
     </div>
   </div>
-  <div class="row">
-    <div class="title-text col-12 mt-4 mb-2">
-      <span class="title">Formato de carta responsiva</span>
+  <div class="row mb-5">
+    <div class="title-text col-12 mt-3 mb-1">
+      <span class="title">Póliza o certificado</span>
     </div>
-  </div>
-  <div class="card">
-    <div class="card-body">
-      <div class="logo-tec">
-        <img src="../../../assets/images/TecLogo.png" width="30%" height="55" />
-        <span class="title-cancelation mt-2"
-          >Cancelación de SGMM
-          <p class="subtitle-letter">Carta responisva</p></span
-        >
-      </div>
-      <div class="row mt-5">
-        <div class="col-md-12 text-end">
-          <input type="text" placeholder="Ciudad" class="input-one" />
-          <span class="text-form">,</span>
-          <input type="text" placeholder="Estado" class="input-one" />
-          <span class="text-form">a</span>
-          <input type="text" placeholder="Día" class="input-two" />
-          <span class="text-form">de</span>
-          <input type="text" placeholder="Mes" class="input-one" />
-          <span class="text-form">del</span>
-          <input type="text" placeholder="Año" class="input-two" />
-        </div>
-        <div class="col-md-12 text-end">
-          <span class="text-form">Folio asignado</span>
-          <input
-            type="text"
-            placeholder="Folio generado por SIDI"
-            class="input-one"
-          />
-        </div>
-        <div class="textmovil-justify col-md-12 mt-5">
-          <span class="text-form">Yo,</span>
-          <input
-            type="text"
-            placeholder="Nombre del padre o tutor"
-            class="input-tree"
-          />
-          <span class="text-form"
-            >, hago constar que estoy enterado de la cobertura que ofrece la
-            póliza de Seguro de Gastos Médicos Mayores a través del Tecnológico
-            de Monterrey para sus alumnos, sin embargo, estoy de acuerdo en que
-            mi hijo(a)
-          </span>
-          <input
-            type="text"
-            placeholder="Nombre del alumno"
-            class="input-tree"
-          />
-          <span class="text-form">con matricula</span>
-          <input
-            type="text"
-            placeholder="Numero de matricula"
-            class="input-one"
-          />
-          <span class="text-form"
-            >lo haya cancelado durante su proceso de inscripción renunciando
-            expresamente a los beneficios del Seguro de Gastos Médicos Mayores
-            ya que cuenta con una póliza equivalente cuya carátula anexo y ante
-            la eventualidad de lo que ocurriera un accidente o enfermedad a mi
-            hijo (a), libero de toda responsabilidad al Tecnológico de Monterrey
-            y haré frente a la situación con mi póliza personal de Seguro y/o
-            con mis propios recursos
-          </span>
-        </div>
-        <div class="col-md-12 text-center mt-5 mb-3">
-          <p>Atentamente</p>
-          <input
-            type="text"
-            placeholder="Numero del padre o tutor"
-            class="input-firma"
-          />
-        </div>
+    <div class="col-12">
+      <div class="policy">
+        <p>nombre de archivo.pdf</p>
+        <button type="button" class="btn-policy">Seleccionar archivo</button>
       </div>
     </div>
   </div>
-</div>
-<div class="modal-footer">
-  <dynamic-button
-    type="link "
-    title="Regresar"
-    (click)="bsModalRef.hide()"
-  ></dynamic-button>
-  <button type="button" class="button-cancel">Enviar cancelación</button>
+  <div class="row mb-3">
+    <div class="col-12 footer-content mt-3">
+      <div class="col-12 col-md-4 p-0 ">
+        <dynamic-button
+          type="button "
+          title="Guardar cambios"
+        ></dynamic-button>
+      </div>
+      <div class="button-return col-12 col-md-3">
+        <dynamic-button
+          type="button transparent"
+          title="Regresar"
+        ></dynamic-button>
+      </div>
+    </div>
+  </div>
 </div>

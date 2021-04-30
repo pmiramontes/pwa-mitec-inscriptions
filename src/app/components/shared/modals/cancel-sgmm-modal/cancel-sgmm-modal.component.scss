@@ -1,135 +1,76 @@
+@import '../../../../../assets/sass/utilities/variables.scss';
+
 .modal-body {
   padding: 0 1rem;
+}
+
+.card-body {
+  padding: 1rem 2rem 0 0.5rem;
+  background-color: aliceblue;
+}
+
+.title-steps{
+  color: $gray;
+  font-weight: 500;
+}
+
+.steps-follow{
+  list-style: decimal;
+  padding-left: 1rem;
+  line-height: normal;
+  margin-bottom: 0rem;
+  .list-steps {
+    margin-bottom: 0.5rem;
+    font-size: 12px;
+  }
 }
 
 .policy {
   display: inline-flex;
   align-items: center;
   font-size: 13px;
-  color: gray;
+  color: $gray;
   p {
     margin-bottom: 0;
   }
 }
 
 .btn-policy {
-  background-color: #3797f7;
-  border: 1px solid #3797f7;
+  background-color: $blue;
+  border: 1px solid $blue;
   border-radius: 5px;
-  color: white;
-  padding: 2px 15px;
+  color: $white;
+  padding: 0.6em;
   display: inline-block;
-  font-weight: 400;
-  font-size: 11px;
+  font-weight: 500;
+  font-size: 12px;
   cursor: pointer;
   width: auto;
   max-width: 100%;
-  margin-left: 8em;
+  margin-left: 2em;
 }
 
-.title-cancelation {
-  float: right;
-}
-
-.subtitle-letter {
-  text-align: end;
-}
-
-.logo-tec {
-  width: auto;
-  max-width: 100%;
-}
-
-.input-one {
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-bottom: 1px solid silver;
-  outline: none;
-  width: auto;
-  max-width: 21%;
-  font-size: 12px;
-}
-
-.input-two {
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-bottom: 1px solid silver;
-  outline: none;
-  width: auto;
-  max-width: 5%;
-  font-size: 12px;
-}
-
-.input-tree {
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-bottom: 1px solid silver;
-  outline: none;
-  width: 28%;
-  font-size: 12px;
-}
-
-.input-firma {
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-bottom: 1px solid silver;
-  outline: none;
-  width: 50%;
-  text-align: center;
-  font-size: 12px;
-}
-
-.text-form {
-  vertical-align: bottom;
-  margin: 0 5px;
-  font-size: 13px;
-  font-weight: 500;
-}
-
-.text-form:first-child {
-  margin: 0;
-}
-
-.button-cancel {
-  background-color: gray;
-  border: none;
-  border-radius: 8px;
-  color: white;
-  padding: 7px 25px;
-  display: inline-block;
-  font-weight: 500;
-  font-size: 13px;
-  cursor: pointer;
-  width: auto;
-  max-width: 100%;
+.footer-content {
+  display: flex;
+  flex-flow: row-reverse;
 }
 
 @media screen and (max-width: 575px) {
-  .textmovil-justify {
-    text-align: justify;
+  .footer-content {
+    flex-direction: column-reverse;
+    .button-return {
+      padding: 0;
+      margin-bottom: 0.5rem;
+    }
   }
 
-  .card-body {
-    align-self: center;
+  .policy {
+    display: contents;
+    align-items: center;
   }
 
-  .input-one {
-    max-width: 40%;
-  }
-
-  .input-two {
-    max-width: 10%;
-  }
-
-  .input-tree {
-    width: 50%;
-  }
-
-  .input-firma {
-    width: 70%;
-  }
+  .btn-policy{
+    width: 100%;
+    margin-left: 0em;
+}
 }

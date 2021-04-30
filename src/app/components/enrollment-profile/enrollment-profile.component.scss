@@ -1,104 +1,148 @@
 @import "/src/assets/sass/utilities/variables.scss";
 
-.content {
-  display: flex;
-  margin: 5px auto 32px;
-  max-width: 980px;
-  flex-direction: column;
-  text-align: center;
+::ng-deep .mat-content {
+  display: block !important;
 }
 
-.clock-config {
-  display: inline-flex;
-  margin-top: 2em;
-  margin-bottom: 2em;
-  justify-content: center;
-  mat-icon {
-    font-size: 4.9em;
-    align-items: center;
-    color: rgb(106, 106, 129);
-    height: 1em !important;
-    width: 1em !important;
+.title-profile {
+  font-size: 20px;
+  color: $blackTitles;
+}
+
+.help-section {
+  text-align: right;
+  margin-bottom: 0.5em;
+  font-size: 12px;
+  .doubts {
+    margin-right: 1em;
   }
 }
 
-.clock-text {
-  display: inline-grid;
-  justify-items: flex-start;
-  vertical-align: text-bottom;
-  margin-left: 0.5em;
-  line-height: 1.5;
-}
-
-.schedule {
-  align-self: end;
-  font-weight: 600;
-  color: $black;
-}
-
-.hour-start {
-  font-size: 21px;
-  color: rgb(108, 108, 126);
-}
-
-.card-info {
-  border: 1px solid rgb(106, 106, 129);
-  border-radius: 0.5em;
-  background-color: rgb(106, 106, 129);
-  color: $white;
-  margin-left: 4em;
-  align-self: center;
-}
-
-.register-schedule {
-  border-radius: 0.5em;
-  color: $white;
-  margin-left: 5em;
-  align-self: center;
-}
-.info-hour {
-  text-align: justify;
-  font-size: 14px;
-  line-height: initial;
-  padding: 7px 12px 7px 12px;
-  margin-bottom: 0;
-  p {
-    margin-bottom: 0 !important;
-  }
-}
-
-.btn-help {
+.button-help {
   background-color: transparent;
-  border: 1px solid #808080;
-  border-radius: 11px;
-  color: gray;
-  padding: 3px 23px;
+  border: 1px solid $blue;
+  border-radius: 5px;
+  color: $blue;
+  padding: 6px 10px;
+  text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 12px;
   font-weight: 500;
-  margin: 0px 20px;
   cursor: pointer;
 }
 
-.card-body {
-  text-align: initial;
+.stepper {
+  border-bottom: 1px solid #e1e7df;
+  top: -15px;
+}
+
+.num-credits {
+  background-color: transparent;
+  border: 1px solid $blue;
+  border-radius: 50%;
+  font-size: 11px;
+  margin-right: 1em;
+  padding: 3px 5px;
+  height: 18px;
+  display: inline-flex;
+  line-height: 1;
+  color: $blue;
+  vertical-align: text-top;
+}
+
+.title-panelOne {
+  color: $gray;
+  font-weight: 500;
+}
+
+.schedule {
+  align-self: center;
+  .date-start {
+    font-size: 24px;
+    font-weight: 500;
+    color: $blackTitles;
+  }
+
+  .hour-start {
+    font-size: 18px;
+    color: $gray;
+    margin-left: 0.3em;
+  }
+}
+
+.card-info {
+  border-radius: 0.5em;
+  background-color: #6a6a81;
+  color: $white;
   p {
-    margin-bottom: 0 !important;
+    margin-bottom: 1px;
+  }
+  .info-hour {
+    font-size: 11px;
+    line-height: initial;
+    padding: 8px 8px;
+    white-space: nowrap;
+    font-weight: 100;
+    strong {
+      font-weight: 500 !important;
+      color: $white;
+    }
+  }
+}
+
+.subtitles {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 2;
+  color: $black;
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+
+.subtitle-percent {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 2;
+  color: $gray;
+  margin-bottom: 0;
+}
+
+.panelExpOne {
+  mat-expansion-panel {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    box-shadow: 0px 0px 1px -2px rgb(0 0 0 / 20%),
+      0px 0px 2px 0px rgb(0 0 0 / 0%), 0px 0px 0px 0px rgb(0 0 0 / 0%) !important;
+  }
+}
+
+.panelExpAll {
+  mat-expansion-panel {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    box-shadow: 0px 0px 1px -2px rgb(0 0 0 / 20%),
+      0px 0px 2px 0px rgb(0 0 0 / 0%), 0px 0px 0px 0px rgb(0 0 0 / 0%) !important;
   }
 }
 
 .quantity {
   font-size: 12px;
   font-weight: 600;
-  line-height: 2;
   color: $black;
+  margin-left: 0.7em;
 }
 
-.form-check-label{
-  strong {
-    color: $black;
-  }
+.card {
+  border: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+// radiobutton
+.form-check-label {
+  color: $gray;
 }
 
 .form-control {
@@ -114,35 +158,124 @@
   margin-right: 1em;
 }
 
-.panel-coverage {
-  color: $blue;
-  margin-top: 0.5em;
-  padding: 0 0.8em;
-  span {
-    margin-left: 0.6em;
-    line-height: 2;
-  }
-  a {
-    text-decoration: none;
-    display: flex;
-  }
-}
-
 .button-content {
   text-align: -webkit-right;
 }
 
-@media screen and (max-width: 575px) {
-  .clock-config {
-    display: block;
-    margin-bottom: 1em;
-    padding: 0;
+@media screen and (max-width: 1024px) {
+  .help-section {
+    .doubts {
+      margin-right: 0.7em;
+    }
   }
 
-  .card-info,
-  .clock-text,
-  .register-schedule{
-    margin-left: 0;
-    padding: 0;
+  .card-info {
+    .info-hour {
+      white-space: normal;
+    }
   }
 }
+
+@media screen and (max-width: 575px) {
+  .help-section {
+    text-align: center;
+    display: grid;
+    .doubts {
+      margin-right: 0;
+    }
+    .button-help {
+      margin-left: 1.5rem;
+      margin-right: 1.5rem;
+    }
+  }
+
+  .help-sectionMobile {
+    text-align: center;
+    margin-top: 1rem;
+    padding-left: 2.4rem;
+    padding-right: 2.4rem;
+  }
+
+  .stepper {
+    top: -12px;
+  }
+
+  .edit-button {
+    display: grid;
+  }
+
+  .titlePanel-mobile {
+    display: flex;
+    align-items: center;
+  }
+
+  .schedule {
+    text-align: center;
+    display: grid;
+    .date-start {
+      font-size: 36px !important;
+      margin-bottom: 1rem;
+    }
+    .hour-start {
+      font-size: 22px !important;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .card-info {
+    .info-hour {
+      font-size: 16px;
+      text-align: center;
+    }
+  }
+
+  .register-schedule {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .schedule {
+    .date-start {
+      font-size: 30px !important;
+    }
+  }
+
+  .card-info {
+    .info-hour {
+      font-size: 12px;
+      padding: 8px 4px;
+    }
+  }
+
+  .mat-expansion-panel-header {
+    height: 60px !important;
+  }
+}
+
+// ngb-collapseProfile
+
+// .card {
+//   padding: 0px ;
+//   border: none;
+//   border-top-left-radius: 0;
+//   border-top-right-radius: 0;
+//   border-bottom-left-radius: 0;
+//   border-bottom-right-radius: 0;
+// }
+
+// .card-body {
+//   padding: 0.2rem 1rem;
+// }
+
+// .button-chevron{
+//     font-weight: 400;
+//     color: #212529;
+//     background-color: transparent;
+//     border: 1px solid transparent;
+//     padding: 0.2rem 0;
+//     font-size: 1rem;
+//     line-height: 1.5;
+//     border-radius: 0.25rem;
+//     float: right;
+// }

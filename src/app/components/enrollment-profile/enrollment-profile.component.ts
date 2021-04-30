@@ -12,6 +12,15 @@ export class EnrollmentProfileComponent implements OnInit {
   bsModalRef: BsModalRef = new BsModalRef;
 
   edited = true;
+  panelOpenOne = false;
+  panelOpenTwo = false;
+  panelOpenThree = false;
+  panelOpenFour = false;
+  panelOpenFive = false;
+
+  toggle = true;
+  icon = 'expand_more'
+
   constructor(private modalService: BsModalService) { 
   }
 
@@ -25,6 +34,12 @@ export class EnrollmentProfileComponent implements OnInit {
   openCancelSGSM() {
     this.bsModalRef = this.modalService.show(CancelSgmmModalComponent, Object.assign({}, { class: 'modal-lg modal-dialog-centered' }));
   }
+
+  enableChevronIcon() {
+    this.toggle = !this.toggle;
+    console.log(this.toggle)
+    this.icon = this.toggle ? 'expand_less' : 'expand_more'
+}
   
 
 

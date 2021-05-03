@@ -1,6 +1,6 @@
 <div class="modal-header">
   <h4 class="modal-title" id="modal-basic-title">
-    Formulario para usar otro seguro
+    Formato cancelación SGMM
   </h4>
   <button
     type="button"
@@ -20,7 +20,7 @@
           <ul class="steps-follow">
             <li class="list-steps">
               Descarga el formato de Carta Responisva y pide al responsable del pago de tu colegiatura que la llene y firme.
-              <a href="/">Descargar formato de Carta Responsiva</a>
+              <a class="btn-download" href="#" (click)="downloadFile()">Descargar formato de Carta Responsiva</a>
             </li>
             <li class="list-steps">
               Captura los datos solicitados a continuación.
@@ -133,10 +133,11 @@
     <div class="title-text col-12 mt-3 mb-1">
       <span class="title">Carta de justificación</span>
     </div>
-    <div class="col-12">
-      <div class="policy">
-        <p>nombre de archivo.pdf</p>
-        <button type="button" class="btn-policy">Seleccionar archivo</button>
+    <div class="col-12 fileBtn-mobile">
+      <div class="files">
+        <p>{{fileLetter || fileText}}</p>
+        <input #fileInputLetter type="file" accept="application/pdf" (change)="onChangeLetter($event)" hidden/>
+        <button class="btn-files" (click)="fileInputLetter.click()">Seleccionar archivo</button>
       </div>
     </div>
   </div>
@@ -144,10 +145,11 @@
     <div class="title-text col-12 mt-3 mb-1">
       <span class="title">Póliza o certificado</span>
     </div>
-    <div class="col-12">
-      <div class="policy">
-        <p>nombre de archivo.pdf</p>
-        <button type="button" class="btn-policy">Seleccionar archivo</button>
+    <div class="col-12 fileBtn-mobile">
+      <div class="files">
+        <p>{{filePolicy || fileText}}</p>
+        <input #fileInputPolicy type="file" accept="application/pdf" (change)="onChangePolicy($event)" hidden/>
+        <button class="btn-files" (click)="fileInputPolicy.click()">Seleccionar archivo</button>
       </div>
     </div>
   </div>
@@ -156,13 +158,14 @@
       <div class="col-12 col-md-4 p-0 ">
         <dynamic-button
           type="button "
-          title="Guardar cambios"
+          title="Cancelar SGMM"
         ></dynamic-button>
       </div>
       <div class="button-return col-12 col-md-3">
         <dynamic-button
           type="button transparent"
           title="Regresar"
+          (click)="bsModalRef.hide()"
         ></dynamic-button>
       </div>
     </div>

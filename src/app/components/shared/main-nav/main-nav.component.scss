@@ -1,5 +1,11 @@
 @import "/src/assets/sass/utilities/variables.scss";
 
+
+.mat-drawer-content {
+  height: fit-content !important;
+}
+
+
 .sidenav-container {
   height: 100%;
 }

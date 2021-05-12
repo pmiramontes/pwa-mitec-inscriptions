@@ -1,0 +1,43 @@
+@import "/src/assets/sass/utilities/variables.scss";
+
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 350px;
+}
+
+.sidenav .mat-toolbar {
+  // background: inherit;
+  color: white;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.mat-toolbar-single-row {
+  height: 50px;
+  background-color: $blue;
+}
+
+.closeIcon {
+  font-size: 24px;
+  margin-left: auto;
+  color: white;
+  writing-mode: vertical-rl;
+  cursor: pointer;
+}
+
+::ng-deep .mat-icon-button {
+  margin-right: 1em !important;
+}
+
+@media screen and (max-width: 575px) {
+  .sidenav {
+    width: 100%;
+  }
+}

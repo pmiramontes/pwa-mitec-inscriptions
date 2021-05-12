@@ -41,6 +41,9 @@ import { SelectionTrainingUnitsComponent } from './components/selection-training
 import { TrainingBlocksComponent } from './components/shared/training-blocks/training-blocks.component';
 import { DynamicCardsTrainingComponent } from './components/shared/dynamic-cards-training/dynamic-cards-training.component';
 import { SearchFiltersComponent } from './components/shared/search-filters/search-filters.component';
+import { MainNavComponent } from './components/shared/main-nav/main-nav.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -60,6 +63,7 @@ import { SearchFiltersComponent } from './components/shared/search-filters/searc
     TrainingBlocksComponent,
     DynamicCardsTrainingComponent,
     SearchFiltersComponent,
+    MainNavComponent,
   ],
   imports: [
     BrowserModule,
@@ -78,7 +82,9 @@ import { SearchFiltersComponent } from './components/shared/search-filters/searc
     MatSidenavModule,
     MatListModule,
     MatExpansionModule,
-    HttpClientModule
+    HttpClientModule,
+    LayoutModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent],

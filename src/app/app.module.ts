@@ -2,11 +2,16 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import {MatInputModule} from '@angular/material/input';
+import {LocationStrategy, HashLocationStrategy} from '@angular/common';
+
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+
 
 
 // MaterialUI imports & NgBootstrap
@@ -28,6 +33,7 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
 // Components
 import { ToolbarHeaderComponent } from './components/shared/toolbar-header/toolbar-header.component';
 import { EnrollmentProfileComponent } from './components/enrollment-profile/enrollment-profile.component';
+
 import { DynamicButtonComponent } from './components/shared/dynamic-button/dynamic-button.component';
 import { RegistrationSummaryComponent } from './components/registration-summary/registration-summary.component';
 import { AccountStatmentComponent } from './components/account-statment/account-statment.component';
@@ -64,11 +70,13 @@ import { MatButtonModule } from '@angular/material/button';
     DynamicCardsTrainingComponent,
     SearchFiltersComponent,
     MainNavComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    MatInputModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
     }),
@@ -84,9 +92,10 @@ import { MatButtonModule } from '@angular/material/button';
     MatExpansionModule,
     HttpClientModule,
     LayoutModule,
-    MatButtonModule
+    MatButtonModule,
+    
   ],
-  providers: [],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

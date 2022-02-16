@@ -14,10 +14,12 @@ export class DataService {
 
   //datos prueba
   matricula : string = 'A30000008';
-  ejercicioAcademico = '202113';
+  ejercicioAcademico = '202211';
 
   private idSource = new Subject<string>();
   id = this.idSource.asObservable();
+
+  nombre:string = '';
 
   constructor(private http: HttpClient) { 
     
@@ -43,6 +45,13 @@ export class DataService {
         this.idSource.next(properties.UserProfileProperties.results[i].Value);
           // this.idSource.next(this.userProperties.id);
         }
+        if (properties.UserProfileProperties.results[i].Key === 'PreferredName') {
+          //console.log (properties.UserProfileProperties.results[i].Value);
+          //this.idSource = properties.UserProfileProperties.results[i].Value;
+        this.nombre = properties.UserProfileProperties.results[i].Value;
+          // this.idSource.next(this.userProperties.id);
+        }
+        
       }
     });
 
@@ -120,6 +129,7 @@ getDatosFacturacionLink(){
       "X-Auth-JWT" : this.jwt, //jwto 2
     });
     const reqInit = { headers: headers, withCredentials: true };
+    //console.log('getTurnoInscripcion',`${environment.turnoInscripcion.replace('{MATRICULA}',this.matricula).replace('{EJERCICIOACADEMICO}',this.ejercicioAcademico)}`);
 
     return fetch(
       `${environment.turnoInscripcion.replace('{MATRICULA}',this.matricula).replace('{EJERCICIOACADEMICO}',this.ejercicioAcademico)}`,

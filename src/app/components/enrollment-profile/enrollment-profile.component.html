@@ -25,9 +25,17 @@
       </div>
 
       
-
-      
       <div class="row mt-4" >
+        <div class="col-12">
+          <div class="titlePanel-mobile" style="text-align: right;">
+            <span class="title-panelOne">
+              {{nombre}} {{matricula}}
+              </span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row " >
         <div class="col-12">
          
           <!-- 1  -->
@@ -49,8 +57,10 @@
               <div class="stepper col-12"></div>
               <div class="row no-gutters " *ngIf=!errorTurno>
                 <div class="schedule col-12 col-md-8">
-                  <span class="date-start"> {{turnoInscripcion.attributes.fechaInscripcion | date: 'dd/MM/yyyy'}} </span>
-                  <span class="hour-start"> {{turnoInscripcion.attributes.fechaInscripcion | date: 'hh:mm a'}} </span>
+                  <span class="date-start"> {{turnoInscripcion | date: 'dd/MM/yyyy'}} </span>
+                  <span class="hour-start"> {{turnoInscripcion | date: 'hh:mm a'}} </span>
+
+
                 </div>
                 <div *ngIf="edited" class="card-info col-12 col-md-4">
                   <p class="info-hour">
@@ -68,7 +78,7 @@
                   <dynamic-button
                     type="button1 green"
                     title="Inicia tu inscripción"
-                    (click)="goToLink('https://tec-inscripciones.qa.foris.ai/');"
+                    (click)="goToLink('iris.tec.mx');"
                   ></dynamic-button>
                 </div>
               </div >
@@ -79,15 +89,15 @@
             </mat-expansion-panel>
           </mat-accordion>
 
-          <div class="titlePanel-mobile concluido" *ngIf="concluido">
+          <!-- <div class="titlePanel-mobile concluido" *ngIf="concluido">
             <span class="title-panelOne">          
               Ha concluido el periodo de registro en Mi Perfil Administrativo. En el proceso de inscripción también se podrá realizar la elección del plan de pago (contado o parcialidades) y el tipo de seguro de gastos médicos mayores a contratar
             </span
             >
-          </div>
+          </div> -->
 
           <!-- 2 APOYOS EDUCATIVOS -->
-          <mat-accordion class="panelExpOne" *ngIf="!concluido">
+          <mat-accordion class="panelExpOne" >
             <mat-expansion-panel
               (opened)="panelOpenThree = true"
               (closed)="panelOpenTwo = false"
@@ -116,7 +126,7 @@
           </mat-accordion>
 
           <!-- 3 SEGURO DE GASTOS POR COLEGIATURA -->
-          <mat-accordion class="panelExpAll" *ngIf="!concluido">
+          <mat-accordion class="panelExpAll" >
             <mat-expansion-panel
               (opened) = "panelOpenTwo = true"
               (closed) = "panelOpenTwo = false"
@@ -133,15 +143,17 @@
               </mat-expansion-panel-header>
               <div class="stepper col-12"></div>
               <div class="row no-gutters" >
-                <div class="col-12">
-                  <p class="subtitle-percent" *ngIf="SCOL != null">  {{SCOL.attributes.montoCredito | currency}} </p>
+                <div class="col-12" >
+                  <p class="subtitle-percent" *ngIf="SCOL != null && SCOL.attributes.montoCredito > 0">  {{SCOL.attributes.montoCredito | currency}} </p>
+                  <p class="subtitle-percent" *ngIf="SCOL == null || (SCOL.attributes.montoCredito == null || SCOL.attributes.montoCredito == 0 || SCOL.attributes.montoCredito == '' )">  No es requerido un pago por seguro de colegiatura </p>
                 </div>
+              
                 
               </div>
             </mat-expansion-panel>
           </mat-accordion>
           <!-- 4 SGMM -->
-          <mat-accordion class="panelExpAll" *ngIf="!concluido">
+          <mat-accordion class="panelExpAll" >
             <mat-expansion-panel
               (opened)="panelOpenTwo = true"
               (closed)="panelOpenTwo = false"
@@ -157,7 +169,14 @@
                 </mat-panel-title>
               </mat-expansion-panel-header>
               <div class="stepper col-12"></div>
-              <div class="row no-gutters">
+              <div class="titlePanel-mobile concluido" *ngIf="concluido">
+                <span class="title-panelOne">          
+                  Ha concluido el periodo de modificación de datos en Mi Perfil Administrativo. 
+                  Podrás realizar los cambios necesarios a través de IRIS - Mi Inscripción, 
+                  o si ya concluiste tu inscripción a través de TECservices                
+                </span>
+              </div>
+              <div class="row no-gutters" *ngIf="!concluido">
                 <div class="col-12" >
                   <div class="form-check form-check-inline">
                     <input
@@ -168,6 +187,7 @@
                       value="SGMM"
                       [(ngModel)]="selSGM"
                       (click)="seleccionaSeguro('SGMM')"
+                      
                     />
                     <label class="form-check-label" for="inlineRadio1"
                       >Deseo contratar SGMM
@@ -185,6 +205,7 @@
                       value="SGMC"
                       [(ngModel)]="selSGM"
                       (click)="seleccionaSeguro('SGMC')"
+                      
                     />
                     <label class="form-check-label" for="inlineRadio2"
                       >Cambiar a SGMM cobertura máxima
@@ -202,6 +223,7 @@
                       value="CSGM"
                       [(ngModel)]="selSGM"
                       (click)="cancelaSeguro()"
+                      
                     />
                     <label class="form-check-label" for="inlineRadio3"
                       >Cancelar SGMM</label
@@ -219,7 +241,7 @@
             </mat-expansion-panel>
           </mat-accordion>
           <!-- 5 PLANES DE PAGO -->
-          <mat-accordion class="panelExpAll" *ngIf="!concluido">
+          <mat-accordion class="panelExpAll" >
             <mat-expansion-panel
               (opened)="panelOpenTwo = true"
               (closed)="panelOpenTwo = false"
@@ -235,7 +257,14 @@
                 </mat-panel-title>
               </mat-expansion-panel-header>
               <div class="stepper col-12"></div>
-              <div class="row no-gutters">
+              <div class="titlePanel-mobile concluido" *ngIf="concluido">
+                <span class="title-panelOne">          
+                  Ha concluido el periodo de modificación de datos en Mi Perfil Administrativo. 
+                  Podrás realizar los cambios necesarios a través de IRIS - Mi Inscripción, 
+                  o si ya concluiste tu inscripción a través de TECservices                
+                </span>
+              </div>
+              <div class="row no-gutters" *ngIf="!concluido">
                 <div class="col-12" *ngFor="let plan of listaPlanesDePago">
                   <div class="form-check form-check-inline">
                     <input
@@ -247,6 +276,7 @@
                       value = {{plan.id}}
                       
                       [(ngModel)]="selPlan"
+                      
                     />
                     <label class="form-check-label" for="inlineRadio4" 
                       >{{plan.attributes.descripcionPlanPago}}</label
@@ -258,7 +288,7 @@
             </mat-expansion-panel>
           </mat-accordion>
           <!-- 6 DATOS DE FACTURACION -->
-          <mat-accordion class="panelExpAll" *ngIf="!concluido">
+          <mat-accordion class="panelExpAll" >
             <mat-expansion-panel
               (opened)="panelOpenTwo = true"
               (closed)="panelOpenTwo = false"
@@ -293,8 +323,9 @@
                       <input type="text" class="form-control" />
                     </div> -->
                     
-                    <div class="edit-button col-12 col-md-6 mt-3 mb-3">
-                      <button class="button-help" (click)="goToLink('https://prd23sfac01.itesm.mx/SingleSignOn/MiTecBeta');">
+                    <div class="edit-button col-12 col-md-6 mt-3 mb-3" >
+                      <button class="button-help" (click)="goToLink('https://prd23sfac01.itesm.mx/SingleSignOn/MiTecBeta');" >
+
                         Editar datos de facturación de colegiatura
                       </button>
                     </div>

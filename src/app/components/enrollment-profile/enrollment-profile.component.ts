@@ -57,18 +57,30 @@ export class EnrollmentProfileComponent implements OnInit {
   seconds : string = ' ';
 
   editarDatosFacturacion : string ='';
+  matricula = '';
+  nombre = '';
   
 
   constructor(private modalService: BsModalService, private data: DataService) { 
   }
 
   ngOnInit(): void {
+
+    var hoy = new Date(Date.now());
+    var limite = new Date('2022-01-24T07:00:00-06:00');
+    console.log(hoy);
+    console.log(limite);
+    if (hoy > limite){
+      this.concluido = true;
+    }
     this.data.getUserProperties();
     // this.countDown('2021-06-15T08:00:00-06:00');
     this.editarDatosFacturacion = this.data.getDatosFacturacionLink();
 
     this.data.id.subscribe( user =>{
       this.loadData(user); //user
+      this.nombre = this.data.nombre;
+      this.matricula = user;
       
     });
   }
@@ -150,7 +162,7 @@ export class EnrollmentProfileComponent implements OnInit {
        console.log('turno');
        this.data.getTurnoInscripcion().then(turno =>{
          console.log(turno);
-         this.turnoInscripcion = turno.data;
+         this.turnoInscripcion = turno.data.attributes.fechaInscripcion;
          this.countDown(turno.data.attributes.fechaInscripcion);
          this.errorTurno = false;
 

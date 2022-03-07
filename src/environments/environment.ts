@@ -16,8 +16,9 @@ export const environment = {
 
   },
 
-  jwtAcces: 'http://www.mocky.io/v2/5d69605a330000a2aab68a23',
-  userProperties: 'https://run.mocky.io/v3/9d38157a-7dad-461c-98a5-736cef5b8c36',
+ //DATOS DEL ALUMNO
+ userProperties:'https://mitecpprd.itesm.mx/_api/SP.UserProfiles.PeopleManager/GetMyProperties',
+ // userProperties: 'https://run.mocky.io/v3/9d38157a-7dad-461c-98a5-736cef5b8c36',
 
   //SERVICIOS
   apoyosEconomicos: 'https://apigateway-pprd.tec.mx/tec-de-monterrey/api/tec/alumnos/{MATRICULA}/apoyos-economicos?ejercicio-academico={EJERCICIOACADEMICO}',

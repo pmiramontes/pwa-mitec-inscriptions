@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row pt-4">
         <div class="col-12 col-md-7">
-          <p class="title-profile">Valida tu perfil administrativo</p>
+          <p class="title-profile">Mi perfil de pago</p>
         </div>
         <div class="help-section col-12 col-md-5 d-none d-sm-block">
           <span class="doubts">¿Tienes dudas?</span>
@@ -70,16 +70,14 @@
                   </p>
                 </div>
                 <div *ngIf="!edited" class="col-12 col-md-4">
+                  
+                  <!-- desabilitado  -->
                   <!-- <dynamic-button
-                    routerLink="/selection-training-units"
-                    type="button1 green"
-                    title="Inicia tu inscripción"
-                  ></dynamic-button> -->
-                  <dynamic-button
+
                     type="button1 green"
                     title="Inicia tu inscripción"
                     (click)="goToLink('iris.tec.mx');"
-                  ></dynamic-button>
+                  ></dynamic-button> -->
                 </div>
               </div >
               <div class="schedule col-12 col-md-8" *ngIf=errorTurno>
@@ -185,6 +183,7 @@
                       name="inlineRadioOptions"
                       id="inlineRadio1"
                       value="SGMM"
+                      disabled
                       [(ngModel)]="selSGM"
                       (click)="seleccionaSeguro('SGMM')"
                       
@@ -205,6 +204,7 @@
                       value="SGMC"
                       [(ngModel)]="selSGM"
                       (click)="seleccionaSeguro('SGMC')"
+                      disabled
                       
                     />
                     <label class="form-check-label" for="inlineRadio2"
@@ -223,6 +223,7 @@
                       value="CSGM"
                       [(ngModel)]="selSGM"
                       (click)="cancelaSeguro()"
+                      disabled
                       
                     />
                     <label class="form-check-label" for="inlineRadio3"
@@ -276,6 +277,7 @@
                       value = {{plan.id}}
                       
                       [(ngModel)]="selPlan"
+                      disabled
                       
                     />
                     <label class="form-check-label" for="inlineRadio4" 

@@ -67,7 +67,7 @@ export class EnrollmentProfileComponent implements OnInit {
   ngOnInit(): void {
 
     var hoy = new Date(Date.now());
-    var limite = new Date('2022-01-24T07:00:00-06:00');
+    var limite = new Date('2022-06-19T23:50:00-06:00');
     console.log(hoy);
     console.log(limite);
     if (hoy > limite){
@@ -403,6 +403,8 @@ switch (dummy){
   case 'A30008429': return 'A01569056'; break;
   case 'A30013740': return 'A01610455'; break;
   case 'A30007012': return 'A01245201'; break;
+  case 'A30000110': return 'A01570671'; break;
+
    default: return dummy;
 }
 return dummy; 

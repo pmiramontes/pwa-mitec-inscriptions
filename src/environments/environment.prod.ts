@@ -27,4 +27,11 @@ export const environment = {
   //LINKS
   editarDatosFacturacion : 'https://www.segurosmnyl.com.mx/itesm/AccesoAlumnos.aspx?UserV=Invalido&mensaje=No%20existen%20certificados%20activos.&Ubicacion=No%20Disponible&ACT=1',
 
+
+
+
+
+
+
+
 };

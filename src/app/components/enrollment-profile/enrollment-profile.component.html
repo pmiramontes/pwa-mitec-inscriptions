@@ -72,12 +72,12 @@
                 <div *ngIf="!edited" class="col-12 col-md-4">
                   
                   <!-- desabilitado  -->
-                  <!-- <dynamic-button
+                  <dynamic-button *ngIf="iniciado"
 
                     type="button1 green"
                     title="Inicia tu inscripción"
                     (click)="goToLink('iris.tec.mx');"
-                  ></dynamic-button> -->
+                  ></dynamic-button>
                 </div>
               </div >
               <div class="schedule col-12 col-md-8" *ngIf=errorTurno>
@@ -116,9 +116,12 @@
                   <p class="subtitles">{{apoyo.attributes.descripcionApoyoEconomico}}</p>
                   <!-- <p class="subtitle-percent">{{apoyo.attributes.porcentajeApoyoEconomico}}%</p> -->
                 </div>
-                <div class="col-12"  *ngIf = "!listaApoyos.length"> 
-                  <p class="subtitle-percent">  Por el momento no se cuenta con apoyos educativos o formas de pago registrados </p>
-                </div>
+               
+              </div>
+              <div class="col-12" *ngIf="!apoyos">
+                <span class="subtitle-percent" >         
+                  Por el momento no se cuenta con apoyos educativos o formas de pago registrados             
+                </span>
               </div>
             </mat-expansion-panel>
           </mat-accordion>
@@ -140,10 +143,21 @@
                 </mat-panel-title>
               </mat-expansion-panel-header>
               <div class="stepper col-12"></div>
-              <div class="row no-gutters" >
+              <div class="col-12" *ngIf="!concluido">
+                <span class="subtitle-percent" >          
+                  Para períodos intensivos, no aplica pago de seguros a menos que no hayas estado inscrito en el semestre previo, de ser así, estamos para apoyarte en TECservices             
+                </span>
+              </div>
+              <div class="titlePanel-mobile concluido" *ngIf="concluido">
+                <span class="title-panelOne">          
+                  Para períodos intensivos, no aplica pago de seguros a menos que no hayas estado inscrito en el semestre previo, de ser así, estamos para apoyarte en TECservices              
+                </span>
+              </div>
+              <div class="row no-gutters" *ngIf="false">
                 <div class="col-12" >
                   <p class="subtitle-percent" *ngIf="SCOL != null && SCOL.attributes.montoCredito > 0">  {{SCOL.attributes.montoCredito | currency}} </p>
                   <p class="subtitle-percent" *ngIf="SCOL == null || (SCOL.attributes.montoCredito == null || SCOL.attributes.montoCredito == 0 || SCOL.attributes.montoCredito == '' )">  No es requerido un pago por seguro de colegiatura </p>
+
                 </div>
               
                 
@@ -169,12 +183,16 @@
               <div class="stepper col-12"></div>
               <div class="titlePanel-mobile concluido" *ngIf="concluido">
                 <span class="title-panelOne">          
-                  Ha concluido el periodo de modificación de datos en Mi Perfil Administrativo. 
-                  Podrás realizar los cambios necesarios a través de IRIS - Mi Inscripción, 
-                  o si ya concluiste tu inscripción a través de TECservices                
+                  Para períodos intensivos, no aplica pago de seguros a menos que no hayas estado inscrito en el semestre previo, de ser así, estamos para apoyarte en TECservices              
                 </span>
               </div>
-              <div class="row no-gutters" *ngIf="!concluido">
+              <div class="col-12" *ngIf="!concluido">
+                <span class="subtitle-percent" >         
+                  Para períodos intensivos, no aplica pago de seguros a menos que no hayas estado inscrito en el semestre previo, de ser así, estamos para apoyarte en TECservices             
+                </span>
+              </div>
+
+              <div class="row no-gutters" *ngIf="false">
                 <div class="col-12" >
                   <div class="form-check form-check-inline">
                     <input
@@ -260,12 +278,15 @@
               <div class="stepper col-12"></div>
               <div class="titlePanel-mobile concluido" *ngIf="concluido">
                 <span class="title-panelOne">          
-                  Ha concluido el periodo de modificación de datos en Mi Perfil Administrativo. 
-                  Podrás realizar los cambios necesarios a través de IRIS - Mi Inscripción, 
-                  o si ya concluiste tu inscripción a través de TECservices                
+                  En períodos intensivos, solo existe la opción del plan de pago de contado              
                 </span>
               </div>
-              <div class="row no-gutters" *ngIf="!concluido">
+              <div class="col-12" *ngIf="!concluido">
+                <span class="subtitle-percent" >          
+                  En períodos intensivos, solo existe la opción del plan de pago de contado                
+                </span>
+              </div>
+              <div class="row no-gutters" *ngIf="false">
                 <div class="col-12" *ngFor="let plan of listaPlanesDePago">
                   <div class="form-check form-check-inline">
                     <input
@@ -326,7 +347,7 @@
                     </div> -->
                     
                     <div class="edit-button col-12 col-md-6 mt-3 mb-3" >
-                      <button class="button-help" (click)="goToLink('https://prd23sfac01.itesm.mx/SingleSignOn/MiTecBeta');" >
+                      <button class="button-help" (click)="goToLink('https://serviciosfacturacion.tec.mx/');" >
 
                         Editar datos de facturación de colegiatura
                       </button>
@@ -339,7 +360,7 @@
             </mat-expansion-panel>
           </mat-accordion>
           <div class="card" *ngIf="!concluido">
-            <div class="card-body">
+            <div class="card-body" *ngIf="false">
               <div class="row">
                 <div class="col-12 button-content mt-3">
                   <div class="col-12 col-md-3 p-0">
@@ -350,7 +371,7 @@
                       (click)="guardar()"
                     ></dynamic-button>
                   </div>
-                  <div class="col-12 mt-2 p-0 d-block d-sm-none">
+                  <div class="col-12 mt-2 p-0 d-block d-sm-none"> 
                     <dynamic-button
                       type="button transparent"
                       title="Regresar"

@@ -26,6 +26,8 @@ export class EnrollmentProfileComponent implements OnInit {
   panelOpenFour = false;
   panelOpenFive = false;
   concluido = false; 
+  iniciado = false;
+  apoyos = false;
 
   toggle = false;
   icon = 'expand_more'
@@ -68,10 +70,15 @@ export class EnrollmentProfileComponent implements OnInit {
 
     var hoy = new Date(Date.now());
     var limite = new Date('2022-06-19T23:50:00-06:00');
+    var inicio = new Date('2022-06-10T07:00:00-06:00');
     console.log(hoy);
     console.log(limite);
     if (hoy > limite){
       this.concluido = true;
+    }
+    if (hoy >= inicio){
+      console.log('inicio');
+      this.iniciado = true;
     }
     this.data.getUserProperties();
     // this.countDown('2021-06-15T08:00:00-06:00');
@@ -102,6 +109,9 @@ export class EnrollmentProfileComponent implements OnInit {
          console.log('apoyos: ');
          
          this.listaApoyos =  apoyos.data;
+         if(this.listaApoyos.length != 0 ){
+           this.apoyos = true;
+         }
          console.log(this.listaApoyos);
        });
 
@@ -284,7 +294,7 @@ export class EnrollmentProfileComponent implements OnInit {
             this.setCobro(cobroSGMM, () => { 
               this.setCobro(cobroSGMC, () => {
                 console.log ('setCobro CGGM');
-                this.openMessage('Perfil Administrativo','La información se ha guardado correctamente','');
+                this.openMessage('Mi perfil de pago','La información se ha guardado correctamente','');
                 this.data.getUserProperties();
               } );
             });
@@ -293,13 +303,13 @@ export class EnrollmentProfileComponent implements OnInit {
             cobro.data.id = this.selSGM;
            this.setCobro(cobro, () => {
              console.log('setCobro ');
-            this.openMessage('Perfil Administrativo','La información se ha guardado correctamente','');
+            this.openMessage('Mi perfil de pago','La información se ha guardado correctamente','');
             this.data.getUserProperties();
           } );
          }
         }).catch(error => {
           console.log('ERROR PLAN');
-          this.openMessage('Perfil Administrativo','Ocurrio un error al guardar la información ','');
+          this.openMessage('Mi perfil de pago','Ocurrio un error al guardar la información ','');
         });
   
   

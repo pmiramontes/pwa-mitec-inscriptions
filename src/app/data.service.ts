@@ -14,7 +14,7 @@ export class DataService {
 
   //datos prueba
   matricula : string = 'A30000008';
-  ejercicioAcademico = '202211';
+  ejercicioAcademico = '202311';
 
   private idSource = new Subject<string>();
   id = this.idSource.asObservable();
@@ -27,34 +27,23 @@ export class DataService {
   }
 
   getUserProperties() {
-
     this.http.get<any>(environment.userProperties, {
       headers : {
         'Content-Type': 'application/json',
         'Accept': 'application/json; odata=verbose'
       }
     }).subscribe((data: any) => {
-      // this.UserInfoSource.next(data);
-      // this.setUserProperties(data);
-      // sessionStorage.setItem('userInfo', JSON.stringify(data));
+
       const properties = data.d;
       for (let i = 0; i < properties.UserProfileProperties.results.length; i++) {
         if (properties.UserProfileProperties.results[i].Key === 'UserName') {
-          //console.log (properties.UserProfileProperties.results[i].Value);
-          //this.idSource = properties.UserProfileProperties.results[i].Value;
         this.idSource.next(properties.UserProfileProperties.results[i].Value);
-          // this.idSource.next(this.userProperties.id);
         }
         if (properties.UserProfileProperties.results[i].Key === 'PreferredName') {
-          //console.log (properties.UserProfileProperties.results[i].Value);
-          //this.idSource = properties.UserProfileProperties.results[i].Value;
         this.nombre = properties.UserProfileProperties.results[i].Value;
-          // this.idSource.next(this.userProperties.id);
         }
-        
       }
     });
-
   }
 
 getDatosFacturacionLink(){

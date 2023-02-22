@@ -72,7 +72,7 @@
                 <div *ngIf="!edited" class="col-12 col-md-4">
                   
                   <!-- desabilitado  -->
-                  <dynamic-button *ngIf="iniciado"
+                  <dynamic-button *ngIf="botonActivo"
 
                     type="button1 green"
                     title="Inicia tu inscripción"
@@ -87,13 +87,13 @@
             </mat-expansion-panel>
           </mat-accordion>
 
-          <!-- <div class="titlePanel-mobile concluido" *ngIf="concluido">
+          <div class="titlePanel-mobile concluido" *ngIf="concluido">
             <span class="title-panelOne">          
               Ha concluido el periodo de registro en Mi Perfil Administrativo. En el proceso de inscripción también se podrá realizar la elección del plan de pago (contado o parcialidades) y el tipo de seguro de gastos médicos mayores a contratar
             </span
             >
-          </div> -->
-
+          </div>
+          <div *ngIf="!concluido"> 
           <!-- 2 APOYOS EDUCATIVOS -->
           <mat-accordion class="panelExpOne" >
             <mat-expansion-panel
@@ -143,17 +143,17 @@
                 </mat-panel-title>
               </mat-expansion-panel-header>
               <div class="stepper col-12"></div>
-              <div class="col-12" *ngIf="!concluido">
+              <!-- <div class="col-12" >
                 <span class="subtitle-percent" >          
-                  Para períodos intensivos, no aplica pago de seguros a menos que no hayas estado inscrito en el semestre previo, de ser así, estamos para apoyarte en TECservices             
+                  Para períodos intensivos, no aplica pago de seguros a menos que no hayas estado inscrito en el semestre previo, de ser así, estamos para apoyarte en TECservices            
                 </span>
-              </div>
+              </div> -->
               <div class="titlePanel-mobile concluido" *ngIf="concluido">
                 <span class="title-panelOne">          
-                  Para períodos intensivos, no aplica pago de seguros a menos que no hayas estado inscrito en el semestre previo, de ser así, estamos para apoyarte en TECservices              
+                  Ha concluido el periodo de registro en Mi Perfil Administrativo. En el proceso de inscripción también se podrá realizar la elección del plan de pago (contado o parcialidades) y el tipo de seguro de gastos médicos mayores a contratar
                 </span>
               </div>
-              <div class="row no-gutters" *ngIf="false">
+              <div class="row no-gutters" *ngIf="!concluido">
                 <div class="col-12" >
                   <p class="subtitle-percent" *ngIf="SCOL != null && SCOL.attributes.montoCredito > 0">  {{SCOL.attributes.montoCredito | currency}} </p>
                   <p class="subtitle-percent" *ngIf="SCOL == null || (SCOL.attributes.montoCredito == null || SCOL.attributes.montoCredito == 0 || SCOL.attributes.montoCredito == '' )">  No es requerido un pago por seguro de colegiatura </p>
@@ -165,7 +165,7 @@
             </mat-expansion-panel>
           </mat-accordion>
           <!-- 4 SGMM -->
-          <mat-accordion class="panelExpAll" >
+          <!-- <mat-accordion class="panelExpAll" >
             <mat-expansion-panel
               (opened)="panelOpenTwo = true"
               (closed)="panelOpenTwo = false"
@@ -181,18 +181,14 @@
                 </mat-panel-title>
               </mat-expansion-panel-header>
               <div class="stepper col-12"></div>
-              <div class="titlePanel-mobile concluido" *ngIf="concluido">
-                <span class="title-panelOne">          
-                  Para períodos intensivos, no aplica pago de seguros a menos que no hayas estado inscrito en el semestre previo, de ser así, estamos para apoyarte en TECservices              
-                </span>
-              </div>
-              <div class="col-12" *ngIf="!concluido">
+              
+              <div class="col-12" *ngIf="concluido">
                 <span class="subtitle-percent" >         
-                  Para períodos intensivos, no aplica pago de seguros a menos que no hayas estado inscrito en el semestre previo, de ser así, estamos para apoyarte en TECservices             
+                  Ha concluido el periodo de registro en Mi Perfil Administrativo. En el proceso de inscripción también se podrá realizar la elección del plan de pago (contado o parcialidades) y el tipo de seguro de gastos médicos mayores a contratar
                 </span>
               </div>
 
-              <div class="row no-gutters" *ngIf="false">
+              <div class="row no-gutters" *ngIf="!concluido">
                 <div class="col-12" >
                   <div class="form-check form-check-inline">
                     <input
@@ -201,7 +197,7 @@
                       name="inlineRadioOptions"
                       id="inlineRadio1"
                       value="SGMM"
-                      disabled
+                      
                       [(ngModel)]="selSGM"
                       (click)="seleccionaSeguro('SGMM')"
                       
@@ -222,7 +218,7 @@
                       value="SGMC"
                       [(ngModel)]="selSGM"
                       (click)="seleccionaSeguro('SGMC')"
-                      disabled
+                      
                       
                     />
                     <label class="form-check-label" for="inlineRadio2"
@@ -241,7 +237,7 @@
                       value="CSGM"
                       [(ngModel)]="selSGM"
                       (click)="cancelaSeguro()"
-                      disabled
+                      
                       
                     />
                     <label class="form-check-label" for="inlineRadio3"
@@ -258,7 +254,7 @@
                 
               </div>
             </mat-expansion-panel>
-          </mat-accordion>
+          </mat-accordion> -->
           <!-- 5 PLANES DE PAGO -->
           <mat-accordion class="panelExpAll" >
             <mat-expansion-panel
@@ -268,7 +264,7 @@
               <mat-expansion-panel-header>
                 <mat-panel-title>
                   <div class="titlePanel-mobile">
-                    <button class="num-credits">5</button>
+                    <button class="num-credits">4</button>
                     <span class="title-panelOne"
                       >Selecciona tu plan de pagos</span
                     >
@@ -278,15 +274,15 @@
               <div class="stepper col-12"></div>
               <div class="titlePanel-mobile concluido" *ngIf="concluido">
                 <span class="title-panelOne">          
-                  En períodos intensivos, solo existe la opción del plan de pago de contado              
+                  Ha concluido el periodo de registro en Mi Perfil Administrativo. En el proceso de inscripción también se podrá realizar la elección del plan de pago (contado o parcialidades) y el tipo de seguro de gastos médicos mayores a contratar
                 </span>
               </div>
-              <div class="col-12" *ngIf="!concluido">
+              <!-- <div class="col-12" >
                 <span class="subtitle-percent" >          
-                  En períodos intensivos, solo existe la opción del plan de pago de contado                
+                  En períodos intensivos, solo existe la opción del plan de pago de contado              
                 </span>
-              </div>
-              <div class="row no-gutters" *ngIf="false">
+              </div> -->
+              <div class="row no-gutters" *ngIf="!concluido">
                 <div class="col-12" *ngFor="let plan of listaPlanesDePago">
                   <div class="form-check form-check-inline">
                     <input
@@ -298,7 +294,7 @@
                       value = {{plan.id}}
                       
                       [(ngModel)]="selPlan"
-                      disabled
+                      
                       
                     />
                     <label class="form-check-label" for="inlineRadio4" 
@@ -319,7 +315,7 @@
               <mat-expansion-panel-header>
                 <mat-panel-title>
                   <div class="titlePanel-mobile">
-                    <button class="num-credits">6</button>
+                    <button class="num-credits">5</button>
                     <span class="title-panelOne"
                       >Datos de facturación</span
                     >
@@ -347,10 +343,28 @@
                     </div> -->
                     
                     <div class="edit-button col-12 col-md-6 mt-3 mb-3" >
-                      <button class="button-help" (click)="goToLink('https://serviciosfacturacion.tec.mx/');" >
+                      <button class="button-help" (click)="goToLink(' https://tec.cdc.origon.cloud/');" >
 
-                        Editar datos de facturación de colegiatura
+                        Alta o actualización de datos de facturación de colegiatura
                       </button>
+                      <!-- <div class="col-12">
+                        <span class="subtitle-percent" >         
+                          Nos encontramos en evolución. Espera nuestro nuevo servicio de facturación el lunes 18 de julio.
+                        </span>
+                      </div> -->
+
+                    </div>
+                    <div class="edit-button col-12 col-md-6 mt-3 mb-3" >
+                      <button class="button-help" (click)="goToLink(' https://drive.google.com/file/d/1u7959lnpt3YTBQUUCJ_GSgUj5-wPcw8s/view');" >
+
+                        Cómo dar de alta tus datos de facturación desde TECBot
+                      </button>
+                      <!-- <div class="col-12">
+                        <span class="subtitle-percent" >         
+                          Nos encontramos en evolución. Espera nuestro nuevo servicio de facturación el lunes 18 de julio.
+                        </span>
+                      </div> -->
+
                     </div>
                   </div>
                 </div>
@@ -359,8 +373,8 @@
             
             </mat-expansion-panel>
           </mat-accordion>
-          <div class="card" *ngIf="!concluido">
-            <div class="card-body" *ngIf="false">
+          <div class="card" *ngIf="iniciado">
+            <div class="card-body">
               <div class="row">
                 <div class="col-12 button-content mt-3">
                   <div class="col-12 col-md-3 p-0">
@@ -381,6 +395,7 @@
               </div>
             </div>
           </div>
+        </div> 
         </div>
       </div>
     </div>

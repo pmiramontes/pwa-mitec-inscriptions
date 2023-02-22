@@ -26,6 +26,7 @@ export class EnrollmentProfileComponent implements OnInit {
   panelOpenFour = false;
   panelOpenFive = false;
   concluido = false; 
+  botonActivo = false;
   iniciado = false;
   apoyos = false;
 
@@ -38,7 +39,7 @@ export class EnrollmentProfileComponent implements OnInit {
   listaAtributos : any = [];
   listaPlanesDePago : any = [];
   listaCobros : any = [];
-  turnoInscripcion : any;
+  turnoInscripcion : string = '';
 
   SCOL : any = null; 
   SGMC : any = null;
@@ -69,16 +70,28 @@ export class EnrollmentProfileComponent implements OnInit {
   ngOnInit(): void {
 
     var hoy = new Date(Date.now());
-    var limite = new Date('2022-06-19T23:50:00-06:00');
-    var inicio = new Date('2022-06-10T07:00:00-06:00');
-    console.log(hoy);
-    console.log(limite);
+    var limite = new Date('2023-01-25T19:00:00-19:00');
+    var inicio = new Date('2023-01-16T07:00:00-06:00');
+
+    var limiteBotonInscripcion = new Date('2023-02-15T00:00:00-06:00');
+    var inicioBotonInscripcion = new Date('2023-01-27T09:00:00-06:00');
+
+    console.log('hoy', hoy);
+    console.log('limite ',limite);
+    console.log('inicio ',inicio);
     if (hoy > limite){
+      console.log('concluido');
+
       this.concluido = true;
     }
     if (hoy >= inicio){
       console.log('inicio');
       this.iniciado = true;
+    }
+
+    if (hoy > inicioBotonInscripcion && hoy < limiteBotonInscripcion){
+      console.log('inicio boton');
+      this.botonActivo = true;
     }
     this.data.getUserProperties();
     // this.countDown('2021-06-15T08:00:00-06:00');
@@ -88,6 +101,8 @@ export class EnrollmentProfileComponent implements OnInit {
       this.loadData(user); //user
       this.nombre = this.data.nombre;
       this.matricula = user;
+      // this.matricula = 'A01754229';
+
       
     });
   }
@@ -96,13 +111,14 @@ export class EnrollmentProfileComponent implements OnInit {
     this.errorCobro = false;
     this.errorPLan = false;
     console.log(user);
-    this.data.matricula = this.cuentasDummy(user);
+    this.data.matricula = user ; //this.cuentasDummy(user);
+    // this.data.matricula = 'A01754229';
    console.log(this.data.matricula);
    this.data.getTokenApiTec().then(res =>{
      this.data.getJWT(this.data.tokenApi.access_token).then(res => {
-       console.log(this.data.jwt);
-       console.log(this.data.tokenApi);
-       console.log('TEST API MANAGER');
+      //  console.log(this.data.jwt);
+      //  console.log(this.data.tokenApi);
+      //  console.log('TEST API MANAGER');
 
        //APOYOS
        this.data.getApoyosEconomicos().then(apoyos => {
@@ -148,7 +164,7 @@ export class EnrollmentProfileComponent implements OnInit {
           
 
           this.SCOL = this.getSeguro('SCOL');
-          console.log(this.SCOL);
+          console.log('SCOL',this.SCOL);
           this.SGMC = this.getSeguro('SGMC');
           this.SGMM = this.getSeguro('SGMM');
 
@@ -171,10 +187,22 @@ export class EnrollmentProfileComponent implements OnInit {
        //TURNO INSCRIPCION
        console.log('turno');
        this.data.getTurnoInscripcion().then(turno =>{
+        
          console.log(turno);
          this.turnoInscripcion = turno.data.attributes.fechaInscripcion;
+         this.turnoInscripcion = this.turnoInscripcion.replace('-06:00','-05:00');
+         console.log('this.turnoInscripcion', this.turnoInscripcion.replace('-06:00','-05:00'));
          this.countDown(turno.data.attributes.fechaInscripcion);
          this.errorTurno = false;
+      //    const activationDate = new Date(this.turnoInscripcion);
+      //    var LocaDtate = new Date(activationDate.getUTCFullYear(),
+      //                                       activationDate.getUTCMonth(),
+      //                                       activationDate.getUTCDate(),
+      //                                       activationDate.getUTCHours(),
+      //                                       activationDate.getUTCMinutes(),
+      //                                       activationDate.getUTCSeconds()
+      //                                       );
+      // console.log ('LocaDtate',LocaDtate);
 
        }).catch(err => {
          console.log('error turno');
@@ -449,7 +477,7 @@ var x = setInterval(() => {
 
 countDownMath(countDownDate : number){
   // Get today's date and time
-  console.log(countDownDate);
+  // console.log(countDownDate);
   var now = new Date().getTime();
 
   // Find the distance between now and the count down date
@@ -470,12 +498,12 @@ countDownMath(countDownDate : number){
 
   
   // Display the result in the element with id="demo"
-  console.log(days);
-  console.log(hours);
+  // console.log(days);
+  // console.log(hours);
 
-  console.log(minutes);
+  // console.log(minutes);
 
-  console.log(seconds);
+  // console.log(seconds);
 
   return distance;
 }

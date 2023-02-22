@@ -50,6 +50,7 @@ import { SearchFiltersComponent } from './components/shared/search-filters/searc
 import { MainNavComponent } from './components/shared/main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatButtonModule } from '@angular/material/button';
+import { UTCDatePipe } from './utcdate.pipe';
 
 @NgModule({
   declarations: [
@@ -70,6 +71,7 @@ import { MatButtonModule } from '@angular/material/button';
     DynamicCardsTrainingComponent,
     SearchFiltersComponent,
     MainNavComponent,
+    UTCDatePipe,
     
   ],
   imports: [

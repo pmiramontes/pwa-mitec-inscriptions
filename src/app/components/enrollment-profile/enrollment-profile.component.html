@@ -3,48 +3,49 @@
     <div class="container">
       <div class="row pt-4">
         <div class="col-12 col-md-7">
-          <p class="title-profile">Mi perfil de pago</p>
+          <p class="title-profile">Mi Perfil de Pago</p>
         </div>
         <div class="help-section col-12 col-md-5 d-none d-sm-block">
           <span class="doubts">¿Tienes dudas?</span>
-          <button class="button-help" (click)="goToLink('https://itesm.custhelp.com/app/chat/Tec21_Faqs');">Contáctanos</button>
+          <button
+            class="button-help"
+            (click)="goToLink('https://tec.mx/es/contactanos')"
+          >
+            Contáctanos
+          </button>
         </div>
       </div>
-      
-      <div class="row" >
-        <div class="col-12">
-         
-        </div>
+
+      <div class="row">
+        <div class="col-12"></div>
         <div class="help-sectionMobile col-12 d-block d-sm-none">
           <span class="doubts">¿Tienes dudas?</span>
-          <dynamic-button 
+          <dynamic-button
             type="button transparent"
             title="Contáctanos"
+            (click)="goToLink('https://tec.mx/es/contactanos')"
           ></dynamic-button>
         </div>
       </div>
 
-      
-      <div class="row mt-4" >
+      <div class="row mt-4">
         <div class="col-12">
-          <div class="titlePanel-mobile" style="text-align: right;">
-            <span class="title-panelOne">
-              {{nombre}} {{matricula}}
-              </span>
+          <div class="titlePanel-mobile" style="text-align: right">
+            <span class="title-panelOne"> {{ nombre }} {{ matricula }} </span>
           </div>
         </div>
       </div>
-      
-      <div class="row " >
+
+      <div class="row">
         <div class="col-12">
-         
           <!-- 1  -->
-          <mat-accordion >
-            <mat-expansion-panel style="margin-bottom: 10px;"
+          <mat-accordion>
+            <mat-expansion-panel
+              style="margin-bottom: 10px"
               (opened)="panelOpenOne = true"
               (closed)="panelOpenOne = false"
             >
-              <mat-expansion-panel-header >
+              <mat-expansion-panel-header>
                 <mat-panel-title>
                   <div class="titlePanel-mobile">
                     <button class="num-credits">1</button>
@@ -55,277 +56,517 @@
                 </mat-panel-title>
               </mat-expansion-panel-header>
               <div class="stepper col-12"></div>
-              <div class="row no-gutters " *ngIf=!errorTurno>
+              <div class="row no-gutters" *ngIf="!errorTurno">
                 <div class="schedule col-12 col-md-8">
-                  <span class="date-start"> {{turnoInscripcion | date: 'dd/MM/yyyy'}} </span>
-                  <span class="hour-start"> {{turnoInscripcion | date: 'hh:mm a'}} </span>
-
-
+                  <span class="date-start">
+                    {{ turnoInscripcion | date : "dd/MM/yyyy" }}
+                  </span>
+                  <span class="hour-start">
+                    {{ turnoInscripcion | date : "hh:mm a" }}
+                  </span>
                 </div>
                 <div *ngIf="edited" class="card-info col-12 col-md-4">
                   <p class="info-hour">
-                    Faltan <strong>{{days}} días</strong>, <strong>{{hours}} horas</strong>,
-                    <strong>{{minutes}} minutos</strong> <br />para iniciar tu
+                    Faltan <strong>{{ days }} días</strong>,
+                    <strong>{{ hours }} horas</strong>,
+                    <strong>{{ minutes }} minutos</strong> <br />para iniciar tu
                     inscripción
                   </p>
                 </div>
                 <div *ngIf="!edited" class="col-12 col-md-4">
-                  
                   <!-- desabilitado  -->
-                  <dynamic-button *ngIf="botonActivo"
-
+                  <dynamic-button
+                    *ngIf="botonActivo"
                     type="button1 green"
                     title="Inicia tu inscripción"
-                    (click)="goToLink('iris.tec.mx');"
+                    (click)="goToLink('iris.tec.mx')"
                   ></dynamic-button>
                 </div>
-              </div >
-              <div class="schedule col-12 col-md-8" *ngIf=errorTurno>
-                <span class="subtitle-percent"> Por el momento no cuentas con un turno de inscripción asignado </span>
-
+              </div>
+              <div class="schedule col-12 col-md-8" *ngIf="errorTurno">
+                <span class="subtitle-percent">
+                  Por el momento no cuentas con un turno de inscripción asignado
+                </span>
               </div>
             </mat-expansion-panel>
           </mat-accordion>
 
           <div class="titlePanel-mobile concluido" *ngIf="concluido">
-            <span class="title-panelOne">          
-              Ha concluido el periodo de registro en Mi Perfil Administrativo. En el proceso de inscripción también se podrá realizar la elección del plan de pago (contado o parcialidades) y el tipo de seguro de gastos médicos mayores a contratar
-            </span
-            >
+            <span class="title-panelOne">
+              Ha concluido el periodo de registro en Mi Perfil Administrativo.
+              En el proceso de inscripción también se podrá realizar la elección
+              del plan de pago (contado o parcialidades) y el tipo de seguro de
+              gastos médicos mayores a contratar
+            </span>
           </div>
-          <div *ngIf="!concluido"> 
-          <!-- 2 APOYOS EDUCATIVOS -->
-          <mat-accordion class="panelExpOne" >
-            <mat-expansion-panel
-              (opened)="panelOpenThree = true"
-              (closed)="panelOpenTwo = false"
-            >
-              <mat-expansion-panel-header>
-                <mat-panel-title>
-                  <div class="titlePanel-mobile">
-                    <button class="num-credits">2</button>
-                    <span class="title-panelOne"
-                      >Consulta tus apoyos educativos y formas de pago</span
-                    >
+          <div *ngIf="!concluido">
+            <!-- 2 APOYOS EDUCATIVOS -->
+            <mat-accordion class="panelExpOne">
+              <mat-expansion-panel
+                (opened)="panelOpenThree = true"
+                (closed)="panelOpenTwo = false"
+              >
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <div class="titlePanel-mobile">
+                      <button class="num-credits">2</button>
+                      <span class="title-panelOne"
+                        >Consulta tus apoyos educativos y formas de pago</span
+                      >
+                    </div>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="stepper col-12"></div>
+                <div class="row no-gutters">
+                  <div class="col-12" *ngFor="let apoyo of listaApoyos">
+                    <p class="subtitles">
+                      {{ apoyo.attributes.descripcionApoyoEconomico }}
+                    </p>
+                    <!-- <p class="subtitle-percent">{{apoyo.attributes.porcentajeApoyoEconomico}}%</p> -->
                   </div>
-                </mat-panel-title>
-              </mat-expansion-panel-header>
-              <div class="stepper col-12"></div>
-              <div class="row no-gutters">
-                <div class="col-12" *ngFor="let apoyo of listaApoyos">
-                  <p class="subtitles">{{apoyo.attributes.descripcionApoyoEconomico}}</p>
-                  <!-- <p class="subtitle-percent">{{apoyo.attributes.porcentajeApoyoEconomico}}%</p> -->
                 </div>
-               
-              </div>
-              <div class="col-12" *ngIf="!apoyos">
-                <span class="subtitle-percent" >         
-                  Por el momento no se cuenta con apoyos educativos o formas de pago registrados             
-                </span>
-              </div>
-            </mat-expansion-panel>
-          </mat-accordion>
+                <div class="col-12" *ngIf="!apoyos">
+                  <span class="subtitle-percent">
+                    Por el momento no se cuenta con apoyos educativos o formas
+                    de pago registrados
+                  </span>
+                </div>
+              </mat-expansion-panel>
+            </mat-accordion>
 
-          <!-- 3 SEGURO DE GASTOS POR COLEGIATURA -->
-          <mat-accordion class="panelExpAll" >
-            <mat-expansion-panel
-              (opened) = "panelOpenTwo = true"
-              (closed) = "panelOpenTwo = false"
-            >
-              <mat-expansion-panel-header>
-                <mat-panel-title>
-                  <div class="titlePanel-mobile">
-                    <button class="num-credits">3</button>
-                    <span class="title-panelOne"
-                      >Consulta tu seguro por colegiatura</span
-                    >
-                  </div>
-                </mat-panel-title>
-              </mat-expansion-panel-header>
-              <div class="stepper col-12"></div>
-              <!-- <div class="col-12" >
+            <!-- 3 SEGURO DE GASTOS POR COLEGIATURA -->
+            <mat-accordion class="panelExpAll">
+              <mat-expansion-panel
+                (opened)="panelOpenTwo = true"
+                (closed)="panelOpenTwo = false"
+              >
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <div class="titlePanel-mobile">
+                      <button class="num-credits">3</button>
+                      <span class="title-panelOne"
+                        >Consulta tu cobertura pago de colegiatura</span
+                      >
+                    </div>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="stepper col-12"></div>
+                <!-- <div class="col-12" >
                 <span class="subtitle-percent" >          
                   Para períodos intensivos, no aplica pago de seguros a menos que no hayas estado inscrito en el semestre previo, de ser así, estamos para apoyarte en TECservices            
                 </span>
               </div> -->
-              <div class="titlePanel-mobile concluido" *ngIf="concluido">
-                <span class="title-panelOne">          
-                  Ha concluido el periodo de registro en Mi Perfil Administrativo. En el proceso de inscripción también se podrá realizar la elección del plan de pago (contado o parcialidades) y el tipo de seguro de gastos médicos mayores a contratar
-                </span>
-              </div>
-              <div class="row no-gutters" *ngIf="!concluido">
-                <div class="col-12" >
-                  <p class="subtitle-percent" *ngIf="SCOL != null && SCOL.attributes.montoCredito > 0">  {{SCOL.attributes.montoCredito | currency}} </p>
-                  <p class="subtitle-percent" *ngIf="SCOL == null || (SCOL.attributes.montoCredito == null || SCOL.attributes.montoCredito == 0 || SCOL.attributes.montoCredito == '' )">  No es requerido un pago por seguro de colegiatura </p>
+                <div class="titlePanel-mobile concluido" *ngIf="concluido">
+                  <span class="title-panelOne">
+                    Ha concluido el periodo de registro en Mi Perfil
+                    Administrativo. En el proceso de inscripción también se
+                    podrá realizar la elección del plan de pago (contado o
+                    parcialidades) y el tipo de seguro de gastos médicos mayores
+                    a contratar
+                  </span>
+                </div>
+                <div class="row no-gutters" *ngIf="!concluido">
+                  <div class="col-12">
+                    <p
+                      class="subtitle-percent"
+                      *ngIf="SCOL != null && SCOL.attributes.montoCredito > 0"
+                    >
+                      {{ SCOL.attributes.montoCredito | currency }}
+                    </p>
+                    <br />
+                    <p
+                      class="subtitle-percent"
+                      *ngIf="SCOL != null && SCOL.attributes.montoCredito > 0"
+                    >
+                      El pago de esta
+                      <strong> Cobertura Pago de Colegiatura </strong>tiene el
+                      objetivo de ayudar con la continuidad y conclusión de los
+                      estudios de preparatoria y profesional en caso de que el
+                      padre- tutor responsable del pago de colegiaturas fallezca
+                      durante el periodo de estudios del beneficiario del
+                      programa.
+                    </p>
+                    <p
+                      class="subtitle-percent"
+                      *ngIf="
+                        SCOL == null ||
+                        SCOL.attributes.montoCredito == null ||
+                        SCOL.attributes.montoCredito == 0 ||
+                        SCOL.attributes.montoCredito == ''
+                      "
+                    >
+                      Tu estatus como estudiante no requiere un pago por
+                      Cobertura Pago de Colegiatura.
+                    </p>
 
-                </div>
-              
-                
-              </div>
-            </mat-expansion-panel>
-          </mat-accordion>
-          <!-- 4 SGMM -->
-          <!-- <mat-accordion class="panelExpAll" >
-            <mat-expansion-panel
-              (opened)="panelOpenTwo = true"
-              (closed)="panelOpenTwo = false"
-            >
-              <mat-expansion-panel-header>
-                <mat-panel-title>
-                  <div class="titlePanel-mobile">
-                    <button class="num-credits">4</button>
-                    <span class="title-panelOne"
-                      >Selecciona tu seguro de gastos médicos mayores</span
-                    >
-                  </div>
-                </mat-panel-title>
-              </mat-expansion-panel-header>
-              <div class="stepper col-12"></div>
-              
-              <div class="col-12" *ngIf="concluido">
-                <span class="subtitle-percent" >         
-                  Ha concluido el periodo de registro en Mi Perfil Administrativo. En el proceso de inscripción también se podrá realizar la elección del plan de pago (contado o parcialidades) y el tipo de seguro de gastos médicos mayores a contratar
-                </span>
-              </div>
+                    <br /><br />
+                    <p class="subtitle-percent">
+                      <!-- Recuerda que cuentas con una cobertura para el pago de tu
+                      colegiatura en caso de fallecimiento del responsable de
+                      pago. -->
 
-              <div class="row no-gutters" *ngIf="!concluido">
-                <div class="col-12" >
-                  <div class="form-check form-check-inline">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="inlineRadioOptions"
-                      id="inlineRadio1"
-                      value="SGMM"
-                      
-                      [(ngModel)]="selSGM"
-                      (click)="seleccionaSeguro('SGMM')"
-                      
-                    />
-                    <label class="form-check-label" for="inlineRadio1"
-                      >Deseo contratar SGMM
-                    </label>
-                    <span class="quantity" *ngIf="SGMM != null">({{SGMM.attributes.montoCredito | currency}} )</span>
+                      Para conocer los detalles ingresa a
+                      <a
+                        href="https://mitec.itesm.mx/sites/ServAcad/S_VESTUDIANTIL/Seguros%20y%20Bienestar/Ser_SegCoberturas/index.html"
+                        target="blank"
+                      >
+                        Mitec > Mis seguros y cobertura </a
+                      >.
+                    </p>
                   </div>
                 </div>
-                <div class="col-12" >
-                  <div class="form-check form-check-inline">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="inlineRadioOptions"
-                      id="inlineRadio2"
-                      value="SGMC"
-                      [(ngModel)]="selSGM"
-                      (click)="seleccionaSeguro('SGMC')"
-                      
-                      
-                    />
-                    <label class="form-check-label" for="inlineRadio2"
-                      >Cambiar a SGMM cobertura máxima
-                    </label>
-                    <span class="quantity" *ngIf="SGMC != null">({{SGMC.attributes.montoCredito | currency}} )</span>
-                  </div>
-                </div>
-                <div class="col-12">
-                  <div class="form-check form-check-inline">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="inlineRadioOptions"
-                      id="inlineRadio3"
-                      value="CSGM"
-                      [(ngModel)]="selSGM"
-                      (click)="cancelaSeguro()"
-                      
-                      
-                    />
-                    <label class="form-check-label" for="inlineRadio3"
-                      >Cancelar SGMM</label
+              </mat-expansion-panel>
+            </mat-accordion>
+            <!-- 4 SGMM -->
+            <mat-accordion class="panelExpAll">
+              <mat-expansion-panel
+                (opened)="panelOpenTwo = true"
+                (closed)="panelOpenTwo = false"
+              >
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <div class="titlePanel-mobile">
+                      <button class="num-credits">4</button>
+                      <span class="title-panelOne">
+                        Conoce cómo son los seguros de gastos médicos mayores
+                      </span>
+                    </div>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="stepper col-12"></div>
+
+                <p class="subtitle-percent">
+                  Porque tu salud y bienestar son muy importantes, es necesario
+                  que cuentes con un plan de Seguro de Gastos Médicos Mayores.
+                  Durante tu proceso de inscripción, podrás seleccionar la
+                  opción que mejor se ajuste a tus necesidades:
+                </p>
+                <br />
+
+                <div class="row no-gutters" *ngIf="!concluido">
+                  <div class="col-12">
+                    <div class="subtitle-percent">
+                      <button
+                        mat-button
+                        style="margin-right: 1px"
+                        [ngClass]="{
+                          selected: vistaPlanBasico,
+                          nonSelected: vistaComprobacionPoliza
+                        }"
+                        (click)="verPlanBasico()"
+                      >
+                        Planes: Básico y Plus
+                      </button>
+                      <button
+                        mat-button
+                        [ngClass]="{
+                          selected: !vistaPlanBasico,
+                          nonSelected: !vistaComprobacionPoliza
+                        }"
+                        (click)="verComprobacionPoliza()"
+                      >
+                        Comprobación de póliza externa
+                      </button>
+                    </div>
+                    <div class="subtitle-percent" *ngIf="vistaPlanBasico">
+                      <strong style="font-size: 14px">
+                        ¿Deseas adquirir el SGMM que el Tec te ofrece? </strong
+                      ><br />
+                      <table>
+                        <tr>
+                          <td colspan="3">
+                            <strong> Planes Semestrales</strong>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td>Plan Básico</td>
+                          <td>Plan Plus</td>
+                        </tr>
+                        <tr>
+                          <td>Campus Monterrey</td>
+                          <td>$3,950</td>
+                          <td>$4,450</td>
+                        </tr>
+                        <tr>
+                          <td>Otros Campus</td>
+                          <td>$2,950</td>
+                          <td>$4,450</td>
+                        </tr>
+                      </table>
+
+                      Para conocer los beneficios y detalles de los planes de
+                      SGMM ingresa a
+                      <a
+                        href="https://mitec.itesm.mx/sites/AUS/Paginas/Alumnos/index.html#/"
+                        target="blank"
+                      >
+                        Mi seguro de gastos médicos mayores.</a
+                      >
+                    </div>
+                    <div
+                      class="subtitle-percent"
+                      *ngIf="vistaComprobacionPoliza"
                     >
+                      <strong style="font-size: 14px"
+                        >¿Ya cuentas con un SGMM externo? </strong
+                      ><br /><br />
+                      <strong>
+                        Si ya cuentas con una póliza externa debes comprobarla y
+                        validarla, antes del primer día de clases.</strong
+                      >
+                      <br />
+                      <strong> IMPORTANTE:</strong> Ten en cuenta que,
+                      <strong>
+                        en caso de no comprobarla y validarla exitosamente, se
+                        realizará el cargo del seguro plan básico
+                      </strong>
+                      en tu estado de cuenta. <br /><br />
+                      Infórmate de los
+                      <a
+                        href="https://
+                        mitec.itesm.mx/sites/AUS
+                        Paginas/Alumnos/pdfs/
+                        Requisitos-Formatos-
+                        Proceso-Validaci%C3%B3
+                        SGMM.pdf"
+                        target="blank"
+                      >
+                        requisitos para comprobar y validar el SGMM</a
+                      >
+                      externo en: <br />
+                      <strong>
+                        <a
+                          href="https://mitec.itesm.mx/sites/ServAcad/S_VESTUDIANTIL/Seguros%20y%20Bienestar/Ser_SegCoberturas/index.html"
+                          target="blank"
+                        >
+                          Mi seguro de gastos médicos mayores > Elige la opción
+                          para hacer tu validación</a
+                        >
+                        y asegúrate de cumplirlos.
+                      </strong>
+                    </div>
                   </div>
                 </div>
-                <div class="edit-button col-12 col-md-6 mt-3 mb-3" *ngIf="selSGM != 'CSGM'">
-                  <button class="button-help" 
-                    (click)="goToDatosFacturacion()">
-                    Editar datos de facturación de seguros
-                  </button>
-                </div>
-                
-              </div>
-            </mat-expansion-panel>
-          </mat-accordion> -->
-          <!-- 5 PLANES DE PAGO -->
-          <mat-accordion class="panelExpAll" >
-            <mat-expansion-panel
-              (opened)="panelOpenTwo = true"
-              (closed)="panelOpenTwo = false"
-            >
-              <mat-expansion-panel-header>
-                <mat-panel-title>
-                  <div class="titlePanel-mobile">
-                    <button class="num-credits">4</button>
-                    <span class="title-panelOne"
-                      >Selecciona tu plan de pagos</span
+
+                <!-- <div class="col-12" *ngIf="concluido">
+                  <span class="subtitle-percent">
+                    Ha concluido el periodo de registro en Mi Perfil
+                    Administrativo. En el proceso de inscripción también se
+                    podrá realizar la elección del plan de pago (contado o
+                    parcialidades) y el tipo de seguro de gastos médicos mayores
+                    a contratar
+                  </span>
+                </div> -->
+
+                <!-- <div class="row no-gutters" *ngIf="!concluido">
+                  <div class="col-12">
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="inlineRadioOptions"
+                        id="inlineRadio1"
+                        value="SGMM"
+                        [(ngModel)]="selSGM"
+                        (click)="seleccionaSeguro('SGMM')"
+                      />
+                      <label class="form-check-label" for="inlineRadio1"
+                        >Deseo contratar SGMM
+                      </label>
+                      <span class="quantity" *ngIf="SGMM != null"
+                        >({{ SGMM.attributes.montoCredito | currency }} )</span
+                      >
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="inlineRadioOptions"
+                        id="inlineRadio2"
+                        value="SGMC"
+                        [(ngModel)]="selSGM"
+                        (click)="seleccionaSeguro('SGMC')"
+                      />
+                      <label class="form-check-label" for="inlineRadio2"
+                        >Cambiar a SGMM cobertura máxima
+                      </label>
+                      <span class="quantity" *ngIf="SGMC != null"
+                        >({{ SGMC.attributes.montoCredito | currency }} )</span
+                      >
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="inlineRadioOptions"
+                        id="inlineRadio3"
+                        value="CSGM"
+                        [(ngModel)]="selSGM"
+                        (click)="cancelaSeguro()"
+                      />
+                      <label class="form-check-label" for="inlineRadio3"
+                        >Cancelar SGMM</label
+                      >
+                    </div>
+                  </div>
+                  <div
+                    class="edit-button col-12 col-md-6 mt-3 mb-3"
+                    *ngIf="selSGM != 'CSGM'"
+                  >
+                    <button
+                      class="button-help"
+                      (click)="goToDatosFacturacion()"
                     >
+                      Editar datos de facturación de seguros
+                    </button>
                   </div>
-                </mat-panel-title>
-              </mat-expansion-panel-header>
-              <div class="stepper col-12"></div>
-              <div class="titlePanel-mobile concluido" *ngIf="concluido">
-                <span class="title-panelOne">          
-                  Ha concluido el periodo de registro en Mi Perfil Administrativo. En el proceso de inscripción también se podrá realizar la elección del plan de pago (contado o parcialidades) y el tipo de seguro de gastos médicos mayores a contratar
-                </span>
-              </div>
-              <!-- <div class="col-12" >
+                  <br /><br />
+                  <p class="subtitle-percent">
+                    Porque tu salud y bienestar son muy importantes, es
+                    necesario adquirir el plan de Seguro de Gastos Médicos
+                    Mayores ideal para ti, o bien, si ya cuentas con uno
+                    recuerda comprobar tu seguro actual en
+                    <a href="https://mitec.itesm.mx" target="blank"> Mitec</a>.
+                    La adquisición la podrás realizar durante tu inscripción en
+                    IRIS.
+                    <br />
+                    Ten en cuenta que,
+                    <strong>
+                      en caso de no comprobarlo y validarlo exitosamente</strong
+                    >, se realizará el cargo del seguro básico en tu estado de
+                    cuenta. <br /><br />
+                    Para conocer los detalles ingresa a
+                    <a
+                      href="https://mitec.itesm.mx/sites/ServAcad/S_VESTUDIANTIL/Seguros%20y%20Bienestar/Ser_SegCoberturas/index.html"
+                      target="blank"
+                    >
+                      Mitec > Mis seguros y cobertura </a
+                    >.
+                  </p>
+                </div> -->
+              </mat-expansion-panel>
+            </mat-accordion>
+            <!-- 5 PLANES DE PAGO -->
+            <mat-accordion class="panelExpAll">
+              <mat-expansion-panel
+                (opened)="panelOpenTwo = true"
+                (closed)="panelOpenTwo = false"
+              >
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <div class="titlePanel-mobile">
+                      <button class="num-credits">5</button>
+                      <span class="title-panelOne"
+                        >Selecciona tu plan de pagos</span
+                      >
+                    </div>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="stepper col-12"></div>
+                <div class="titlePanel-mobile concluido" *ngIf="concluido">
+                  <span class="title-panelOne">
+                    Ha concluido el periodo de registro en Mi Perfil
+                    Administrativo. En el proceso de inscripción también se
+                    podrá realizar la elección del plan de pago (contado o
+                    parcialidades) y el tipo de seguro de gastos médicos mayores
+                    a contratar
+                  </span>
+                </div>
+
+                <!-- <div class="col-12" >
                 <span class="subtitle-percent" >          
                   En períodos intensivos, solo existe la opción del plan de pago de contado              
                 </span>
               </div> -->
-              <div class="row no-gutters" *ngIf="!concluido">
-                <div class="col-12" *ngFor="let plan of listaPlanesDePago">
-                  <div class="form-check form-check-inline">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="inlineRadioOptiongulars"
-                      id="inlineRadio4"
-                      (click)="seleccionaPlan(plan)"
-                      value = {{plan.id}}
-                      
-                      [(ngModel)]="selPlan"
-                      
-                      
-                    />
-                    <label class="form-check-label" for="inlineRadio4" 
-                      >{{plan.attributes.descripcionPlanPago}}</label
-                    >
+                <div class="row no-gutters" *ngIf="!concluido">
+                  <div class="col-12" *ngFor="let plan of listaPlanesDePago">
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="inlineRadioOptiongulars"
+                        id="inlineRadio4"
+                        (click)="seleccionaPlan(plan)"
+                        value="{{ plan.id }}"
+                        [(ngModel)]="selPlan"
+                      />
+                      <label class="form-check-label" for="inlineRadio4">{{
+                        plan.attributes.descripcionPlanPago
+                      }}</label>
+                    </div>
                   </div>
+                  <br />
+                  <br />
+                  <p class="subtitle-percent" *ngIf="MensajePlanContado">
+                    <strong>IMPORTANTE: </strong> Recuerda realizar el pago
+                    total de tu colegiatura a más tardar en la fecha de
+                    vencimiento. En caso de que el pago total no sea cubierto,
+                    tu colegiatura se cambiará a Plan de Parcialidades.
+                  </p>
+
+                  <p class="subtitle-percent">
+                    <a
+                      href="https://mitec.itesm.mx/sites/Academia/MIInscripcion/index_CUOTAS.html"
+                      target="_blank"
+                      >Consulta tus cuotas de colegiatura
+                    </a>
+                  </p>
                 </div>
-                
-              </div>
-            </mat-expansion-panel>
-          </mat-accordion>
-          <!-- 6 DATOS DE FACTURACION -->
-          <mat-accordion class="panelExpAll" >
-            <mat-expansion-panel
-              (opened)="panelOpenTwo = true"
-              (closed)="panelOpenTwo = false"
-            >
-              <mat-expansion-panel-header>
-                <mat-panel-title>
-                  <div class="titlePanel-mobile">
-                    <button class="num-credits">5</button>
-                    <span class="title-panelOne"
-                      >Datos de facturación</span
-                    >
-                  </div>
-                </mat-panel-title>
-              </mat-expansion-panel-header>
-              <div class="stepper col-12">
-                <div class="row no-gutters ">
-                  <div class="row">
-                    <!-- <div class="col-12 col-md-6 mb-3 form-check ">
+              </mat-expansion-panel>
+            </mat-accordion>
+            <!-- 6 REVISA TU ESTADO DE CUENTA -->
+            <mat-accordion class="panelExpAll">
+              <mat-expansion-panel
+                (opened)="panelOpenTwo = true"
+                (closed)="panelOpenTwo = false"
+              >
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <div class="titlePanel-mobile">
+                      <button class="num-credits">6</button>
+                      <span class="title-panelOne"
+                        >Revisa tu estado de cuenta</span
+                      >
+                    </div>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="stepper col-12"></div>
+                <div class="titlePanel-mobile concluido" *ngIf="!concluido">
+                  <p class="subtitle-percent">
+                    Recuerda tener tu saldo al corriente para evitar
+                    contratiempos durante tu inscripción. Entra a tu
+                    <a href="https://estadodecuenta.tec.mx/">
+                      Estado de Cuenta Web </a
+                    >y revísalo.
+                  </p>
+                </div>
+                <div></div>
+              </mat-expansion-panel>
+            </mat-accordion>
+
+            <!-- 7 DATOS DE FACTURACION -->
+            <mat-accordion class="panelExpAll">
+              <mat-expansion-panel
+                (opened)="panelOpenTwo = true"
+                (closed)="panelOpenTwo = false"
+              >
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <div class="titlePanel-mobile">
+                      <button class="num-credits">7</button>
+                      <span class="title-panelOne">Datos de facturación</span>
+                    </div>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="stepper col-12">
+                  <div class="row no-gutters">
+                    <div class="row">
+                      <!-- <div class="col-12 col-md-6 mb-3 form-check ">
                       <label class="form-check-label">Nombre</label>
                       <input type="text" class="form-control" />
                     </div>
@@ -341,66 +582,69 @@
                       <label class="form-check-label">Correo</label>
                       <input type="text" class="form-control" />
                     </div> -->
-                    
-                    <div class="edit-button col-12 col-md-6 mt-3 mb-3" >
-                      <button class="button-help" (click)="goToLink(' https://tec.cdc.origon.cloud/');" >
 
-                        Alta o actualización de datos de facturación de colegiatura
-                      </button>
-                      <!-- <div class="col-12">
+                      <div class="edit-button col-12 col-md-6 mt-3 mb-3">
+                        <button
+                          class="button-help"
+                          (click)="goToLink(' https://tec.cdc.origon.cloud/')"
+                        >
+                          Alta o actualización de datos de facturación de
+                          colegiatura
+                        </button>
+                        <!-- <div class="col-12">
                         <span class="subtitle-percent" >         
                           Nos encontramos en evolución. Espera nuestro nuevo servicio de facturación el lunes 18 de julio.
                         </span>
                       </div> -->
-
-                    </div>
-                    <div class="edit-button col-12 col-md-6 mt-3 mb-3" >
-                      <button class="button-help" (click)="goToLink(' https://drive.google.com/file/d/1u7959lnpt3YTBQUUCJ_GSgUj5-wPcw8s/view');" >
-
-                        Cómo dar de alta tus datos de facturación desde TECBot
-                      </button>
-                      <!-- <div class="col-12">
+                      </div>
+                      <div class="edit-button col-12 col-md-6 mt-3 mb-3">
+                        <button
+                          class="button-help"
+                          (click)="
+                            goToLink(
+                              ' https://drive.google.com/file/d/1u7959lnpt3YTBQUUCJ_GSgUj5-wPcw8s/view'
+                            )
+                          "
+                        >
+                          Cómo dar de alta tus datos de facturación desde TECBot
+                        </button>
+                        <!-- <div class="col-12">
                         <span class="subtitle-percent" >         
                           Nos encontramos en evolución. Espera nuestro nuevo servicio de facturación el lunes 18 de julio.
                         </span>
                       </div> -->
-
+                      </div>
                     </div>
                   </div>
                 </div>
-                
-            </div>
-            
-            </mat-expansion-panel>
-          </mat-accordion>
-          <div class="card" *ngIf="iniciado">
-            <div class="card-body">
-              <div class="row">
-                <div class="col-12 button-content mt-3">
-                  <div class="col-12 col-md-3 p-0">
-                    <dynamic-button
-                      type="button "
-                      title="Guardar cambios"
-                      disabled
-                      (click)="guardar()"
-                    ></dynamic-button>
-                  </div>
-                  <div class="col-12 mt-2 p-0 d-block d-sm-none"> 
-                    <dynamic-button
-                      type="button transparent"
-                      title="Regresar"
-                    ></dynamic-button>
+              </mat-expansion-panel>
+            </mat-accordion>
+
+            <div class="card" *ngIf="iniciado">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-12 button-content mt-3">
+                    <div class="col-12 col-md-3 p-0">
+                      <!-- <dynamic-button
+                        type="button "
+                        title="Guardar cambios"
+                        disabled
+                        (click)="guardar()"
+                      ></dynamic-button> -->
+                    </div>
+                    <div class="col-12 mt-2 p-0 d-block d-sm-none">
+                      <dynamic-button
+                        type="button transparent"
+                        title="Regresar"
+                      ></dynamic-button>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div> 
         </div>
       </div>
     </div>
-    
-
-    
   </div>
 </div>

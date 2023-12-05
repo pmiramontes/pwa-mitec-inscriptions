@@ -169,6 +169,20 @@
   border-radius: 4px;
 }
 
+.selected{
+  background-color:#2196F3;
+  color:white;
+
+}
+.nonSelected{
+  background-color:lightgrey;
+  color:white;
+}
+
+table{
+  width: 60%;
+}
+
 @media screen and (max-width: 1024px) {
   .help-section {
     .doubts {
@@ -264,6 +278,8 @@
     margin-right: 0rem !important;
 }
 }
+
+
 
 // ngb-collapseProfile
 

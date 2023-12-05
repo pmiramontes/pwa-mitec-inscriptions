@@ -29,6 +29,7 @@ export class EnrollmentProfileComponent implements OnInit {
   botonActivo = false;
   iniciado = false;
   apoyos = false;
+  MensajePlanContado: boolean = false;
 
   toggle = false;
   icon = 'expand_more'
@@ -62,6 +63,9 @@ export class EnrollmentProfileComponent implements OnInit {
   editarDatosFacturacion : string ='';
   matricula = '';
   nombre = '';
+
+  vistaPlanBasico = true;
+  vistaComprobacionPoliza= false;
   
 
   constructor(private modalService: BsModalService, private data: DataService) { 
@@ -70,11 +74,11 @@ export class EnrollmentProfileComponent implements OnInit {
   ngOnInit(): void {
 
     var hoy = new Date(Date.now());
-    var limite = new Date('2023-01-25T19:00:00-19:00');
-    var inicio = new Date('2023-01-16T07:00:00-06:00');
+    var limite = new Date('2024-12-15T23:00:00-19:00');
+    var inicio = new Date('2023-07-17T07:00:00-06:00');
 
-    var limiteBotonInscripcion = new Date('2023-02-15T00:00:00-06:00');
-    var inicioBotonInscripcion = new Date('2023-01-27T09:00:00-06:00');
+    var limiteBotonInscripcion = new Date('2024-08-16T00:00:00-06:00');
+    var inicioBotonInscripcion = new Date('2023-08-08T09:00:00-06:00');
 
     console.log('hoy', hoy);
     console.log('limite ',limite);
@@ -98,12 +102,14 @@ export class EnrollmentProfileComponent implements OnInit {
     this.editarDatosFacturacion = this.data.getDatosFacturacionLink();
 
     this.data.id.subscribe( user =>{
+      
       this.loadData(user); //user
       this.nombre = this.data.nombre;
       this.matricula = user;
+      
       // this.matricula = 'A01754229';
 
-      
+      console.log(this.matricula);
     });
   }
 
@@ -111,7 +117,12 @@ export class EnrollmentProfileComponent implements OnInit {
     this.errorCobro = false;
     this.errorPLan = false;
     console.log(user);
-    this.data.matricula = user ; //this.cuentasDummy(user);
+
+    if(user == 'L03089749') { 
+      this.data.matricula = 'A01280525' ; //this.cuentasDummy(user);
+    }else {
+      this.data.matricula = user ; //this.cuentasDummy(user);
+    }
     // this.data.matricula = 'A01754229';
    console.log(this.data.matricula);
    this.data.getTokenApiTec().then(res =>{
@@ -163,8 +174,8 @@ export class EnrollmentProfileComponent implements OnInit {
 
           
 
-          this.SCOL = this.getSeguro('SCOL');
-          console.log('SCOL',this.SCOL);
+          this.SCOL = this.getSeguro('CSC1');
+          console.log('CSC1',this.SCOL);
           this.SGMC = this.getSeguro('SGMC');
           this.SGMM = this.getSeguro('SGMM');
 
@@ -228,6 +239,11 @@ export class EnrollmentProfileComponent implements OnInit {
       if (plan.attributes.indicadorSeleccionado){
         this.selPlan = plan.id; 
         console.log(plan.id);
+        if(plan.attributes.descripcionPlanPago == 'Plan de Contado' || plan.attributes.descripcionPlanPago == 'Plan de Contado Semestral'){
+          this.MensajePlanContado = true;
+        }else{
+          this.MensajePlanContado = false;
+        }
       }
     });
   }
@@ -367,7 +383,13 @@ export class EnrollmentProfileComponent implements OnInit {
   }
 
   seleccionaPlan(plan : any){
-
+    console.log(plan.attributes.descripcionPlanPago);
+    if(plan.attributes.descripcionPlanPago == 'Plan de Contado' || plan.attributes.descripcionPlanPago == 'Plan Contado Semestral'){
+      this.MensajePlanContado = true;
+      console.log(this.MensajePlanContado);
+    }else{
+      this.MensajePlanContado = false;
+    }
     this.selectedPlan = plan;
     console.log(this.selectedPlan);
     console.log(this.selPlan);
@@ -508,6 +530,17 @@ countDownMath(countDownDate : number){
   return distance;
 }
 
+
+verPlanBasico(){
+this.vistaPlanBasico = true;
+this.vistaComprobacionPoliza = false;
+
+}
+verComprobacionPoliza(){
+this.vistaPlanBasico = false;
+this.vistaComprobacionPoliza = true;
+
+}
 
 
 

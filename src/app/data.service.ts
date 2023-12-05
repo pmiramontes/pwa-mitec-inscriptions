@@ -14,7 +14,7 @@ export class DataService {
 
   //datos prueba
   matricula : string = 'A30000008';
-  ejercicioAcademico = '202311';
+  ejercicioAcademico = '201410';
 
   private idSource = new Subject<string>();
   id = this.idSource.asObservable();
@@ -27,7 +27,7 @@ export class DataService {
   }
 
   getUserProperties() {
-    this.http.get<any>(environment.userProperties, {
+    this.http.get<any>( environment.production ? environment.userProperties : 'https://run.mocky.io/v3/9cb3afef-21e2-44c8-b185-cb8f72ce6d00', {
       headers : {
         'Content-Type': 'application/json',
         'Accept': 'application/json; odata=verbose'
@@ -138,7 +138,8 @@ getDatosFacturacionLink(){
     const reqInit = { headers: headers, withCredentials: true };
 
     return fetch(
-      `${environment.planesDePagos.replace('{MATRICULA}',this.matricula).replace('{EJERCICIOACADEMICO}',this.ejercicioAcademico)}`,
+      (environment.production? `${environment.planesDePagos.replace('{MATRICULA}',this.matricula).replace('{EJERCICIOACADEMICO}',this.ejercicioAcademico)}` : 'https://run.mocky.io/v3/627a8ee3-a002-4748-855d-f452c0c37290'),
+      
 
       reqInit
     )

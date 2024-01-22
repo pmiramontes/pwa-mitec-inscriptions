@@ -169,14 +169,14 @@
                   <div class="col-12">
                     <p
                       class="subtitle-percent"
-                      *ngIf="SCOL != null && SCOL.attributes.montoCredito > 0"
+                      *ngIf="SCOL != null && SCOL.attributes.montoCredito > 0 && CSCO == null"
                     >
                       {{ SCOL.attributes.montoCredito | currency }}
                     </p>
                     <br />
                     <p
                       class="subtitle-percent"
-                      *ngIf="SCOL != null && SCOL.attributes.montoCredito > 0"
+                      *ngIf=" CSCO == null"
                     >
                       El pago de esta
                       <strong> Cobertura Pago de Colegiatura </strong>tiene el
@@ -189,10 +189,7 @@
                     <p
                       class="subtitle-percent"
                       *ngIf="
-                        SCOL == null ||
-                        SCOL.attributes.montoCredito == null ||
-                        SCOL.attributes.montoCredito == 0 ||
-                        SCOL.attributes.montoCredito == ''
+                        CSCO !=null
                       "
                     >
                       Tu estatus como estudiante no requiere un pago por

@@ -46,6 +46,7 @@ export class EnrollmentProfileComponent implements OnInit {
   SGMC : any = null;
   SGMM : any = null;
   CSGM : any = null;
+  CSCO : any = null;
 
   selectedPlan : any = null;
   selectedSeguro : any = null;
@@ -119,7 +120,7 @@ export class EnrollmentProfileComponent implements OnInit {
     console.log(user);
 
     if(user == 'L03089749') { 
-      this.data.matricula = 'A01280525' ; //this.cuentasDummy(user);
+      this.data.matricula = 'A01570671' ; //this.cuentasDummy(user);
     }else {
       this.data.matricula = user ; //this.cuentasDummy(user);
     }
@@ -160,6 +161,9 @@ export class EnrollmentProfileComponent implements OnInit {
          this.listaAtributos =  atributos.data;
 
          this.CSGM = this.getAtributo('CSGM');
+         this.CSCO = this.getAtributo('CSCO');
+
+         console.log(' SCCO', this.CSCO);
        });
 
        //COBROS
@@ -201,8 +205,8 @@ export class EnrollmentProfileComponent implements OnInit {
         
          console.log(turno);
          this.turnoInscripcion = turno.data.attributes.fechaInscripcion;
-         this.turnoInscripcion = this.turnoInscripcion.replace('-06:00','-05:00');
-         console.log('this.turnoInscripcion', this.turnoInscripcion.replace('-06:00','-05:00'));
+         //this.turnoInscripcion = this.turnoInscripcion.replace('-06:00','-05:00');
+         //console.log('this.turnoInscripcion', this.turnoInscripcion.replace('-06:00','-05:00'));
          this.countDown(turno.data.attributes.fechaInscripcion);
          this.errorTurno = false;
       //    const activationDate = new Date(this.turnoInscripcion);

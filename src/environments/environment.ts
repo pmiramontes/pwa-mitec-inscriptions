@@ -31,7 +31,7 @@ export const environment = {
   
   // apoyosEconomicos: 'https://run.mocky.io/v3/6aaafb9d-1c52-44fb-87b7-0259114da345',
   // planesDePagos : 'https://run.mocky.io/v3/aad73c02-affc-4925-a9eb-e2dedf3f4b37',
-  // atributos : 'https://run.mocky.io/v3/239bb100-284a-490b-b7e4-cde62076eed7',
+  // atributos : 'https://run.mocky.io/v3/5d9de16d-811e-4ae0-8cb0-710bc3bb68c6',
   // cobros : 'https://run.mocky.io/v3/34c97d87-2201-4708-ac0c-f866175613df',
   // seleccionaPlan : 'https://apigateway-pprd.tec.mx/tec-de-monterrey/api/tec/alumnos/{MATRICULA}/relationships/plan-pagos-seleccionado?ejercicio-academico={EJERCICIOACADEMICO}',
   // seleccionaCobro : 'https://apigateway-pprd.tec.mx/tec-de-monterrey/api/tec/alumnos/{MATRICULA}/cobros-servicios/{IDCOBROSERVICIO}?ejercicio-academico={EJERCICIOACADEMICO}',

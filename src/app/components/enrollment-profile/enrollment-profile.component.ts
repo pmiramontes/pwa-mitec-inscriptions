@@ -75,11 +75,11 @@ export class EnrollmentProfileComponent implements OnInit {
   ngOnInit(): void {
 
     var hoy = new Date(Date.now());
-    var limite = new Date('2024-12-15T23:00:00-19:00');
-    var inicio = new Date('2023-07-17T07:00:00-06:00');
+    var limite = new Date('2025-12-15T23:00:00-19:00');
+    var inicio = new Date('2024-12-02T07:00:00-06:00');
 
-    var limiteBotonInscripcion = new Date('2024-08-16T00:00:00-06:00');
-    var inicioBotonInscripcion = new Date('2023-08-08T09:00:00-06:00');
+    var limiteBotonInscripcion = new Date('2024-12-16T00:00:00-06:00');
+    var inicioBotonInscripcion = new Date('2024-12-02T09:00:00-06:00');
 
     console.log('hoy', hoy);
     console.log('limite ',limite);

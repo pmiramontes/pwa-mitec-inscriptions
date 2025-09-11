@@ -14,7 +14,7 @@ export class DataService {
 
   //datos prueba
   matricula : string = 'A30000008';
-  ejercicioAcademico = '202411';
+  ejercicioAcademico = '202511';
 
   private idSource = new Subject<string>();
   id = this.idSource.asObservable();
